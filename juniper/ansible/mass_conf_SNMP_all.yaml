@@ -1,0 +1,23 @@
+---
+- name: Load and commit SNMP configuration data on all Juniper devices
+  hosts: routers
+  roles:
+    - Juniper.junos 
+  connection: local
+  gather_facts: no
+  tasks: 
+    - name: Checking NETCONF connectivity
+      wait_for: 
+        host: "{{ inventory_hostname }}" 
+        port: 830  
+        timeout: 5
+    - name: Apply SNMP configuration - from an external file - and commit
+      junos_install_config: 
+        user: "{{ username }}"
+        password: "{{ password }}"
+        file: "snmp_conf_all.txt"
+        comment: "Enabling SNMP configurations in this router"
+      register: response
+    - name: Print the response
+      debug:
+        var: response

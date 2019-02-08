@@ -1,0 +1,26 @@
+---
+- name: Load and commit Interface MTU configuration data on a device running Junos OS
+  hosts: routers
+  roles:
+    - Juniper.junos 
+  connection: local
+  gather_facts: no
+  tasks: 
+    - name: Checking NETCONF connectivity
+      wait_for: 
+        host: "{{ inventory_hostname }}" 
+        port: 830  
+        timeout: 5
+    - name: Apply MTU configuration and commit
+      juniper_junos_config: 
+        user: "{{ username }}"
+        password: "{{ password }}"
+        load: "set"
+        format: "text"
+        comment: "Adding MTU size of 9018 to the em1 interface - Ansible-configured"
+        lines:
+          - "set interfaces em1 mtu 9018"
+      register: response
+    - name: Print the response
+      debug:
+        var: response

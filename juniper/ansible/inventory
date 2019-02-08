@@ -1,0 +1,13 @@
+[local]
+localhost ansible_connection=network_cli
+
+[routers]
+router_01
+router_02
+router_03
+router_04
+
+[routers:vars]
+ansible_user="user"
+ansible_ssh_pass="P@asSW0rd"
+ansible_network_os=junos

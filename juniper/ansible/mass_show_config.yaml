@@ -1,0 +1,27 @@
+---
+- name: Display the current saved configuration of a Juniper device and then save it to a file
+  hosts: routers
+  roles:
+    - Juniper.junos 
+  connection: local
+  gather_facts: yes
+  tasks:
+    - name: Checking NETCONF connectivity
+      wait_for:
+        host: "{{ inventory_hostname }}"
+        port: 830
+        timeout: 5
+    - name: Execute show config command 
+      juniper_junos_command:
+        user: "{{ username }}"
+        password: "{{ password }}"
+        commands: 
+          - "show configuration"
+      register: response
+#    - name: Print the response
+#      debug:
+#        var: response
+    - name: write response to file                                                                                
+      copy:                                                                                              
+        content: "{{ response.stdout | quote }}" 
+        dest: "/path/to/your/directory/{{inventory_hostname}}_show_configuration_{{ ansible_date_time.date }}.txt"

@@ -1,0 +1,28 @@
+---
+- name: Execute BGP show commands on a Juniper device and then save the result to a file
+  hosts: routers
+  roles:
+    - Juniper.junos 
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Checking NETCONF connectivity
+      wait_for:
+        host: "{{ inventory_hostname }}"
+        port: 830
+        timeout: 5
+    - name: Execute show config proto BGP and its summary
+      juniper_junos_command:
+        user: "{{ username }}"
+        password: "{{ password }}"
+        commands: 
+          - "show configuration protocols bgp"
+          - "show bgp summary"
+      register: response
+    - name: Print the response
+      debug:
+        var: response
+    - name: write response to file                                                                                
+      copy:                                                                                              
+        content: "{{ response.stdout[0] }}" 
+        dest: "/path/to/your/directory/{{inventory_hostname}}_show_bgp_conf_summary.txt"

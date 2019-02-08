@@ -1,0 +1,10 @@
+snmp {
+    community "C0mMuN1Ty" {
+        clients {
+            /* monitoring-server-1 | Site-A */
+            192.0.2.1/32;
+            /* monitoring-server-2 | Site-B */
+            192.0.2.2/32;
+        }
+    }
+}

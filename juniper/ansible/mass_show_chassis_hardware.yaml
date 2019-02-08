@@ -1,0 +1,23 @@
+---
+- name: Execute Chassis inventory command on a Juniper device
+  hosts: routers
+  roles:
+    - Juniper.junos 
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Checking NETCONF connectivity
+      wait_for:
+        host: "{{ inventory_hostname }}"
+        port: 830
+        timeout: 5
+    - name: Execute show chassis hardware command
+      juniper_junos_command:
+        user: "{{ username }}"
+        password: "{{ password }}"
+        commands: 
+          - "show chassis hardware"
+      register: response
+    - name: Print the response
+      debug:
+        var: response

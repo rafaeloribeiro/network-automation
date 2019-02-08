@@ -1,0 +1,35 @@
+---
+- name: Load and commit BFD and ISIS configuration data on a device running Junos OS
+  hosts: routers
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Checking NETCONF connectivity
+      wait_for:
+        host: "{{ inventory_hostname }}"
+        port: 830
+        timeout: 5
+    - name: Apply BFD and ISIS configuration and commit
+      juniper_junos_config:
+        user: "{{ username }}"
+        password: "{{ password }}"
+        load: "set"
+        format: "text"
+        comment: "Baseline BFD and ISIS configuration - Ansible-configured"
+        lines:
+          - "set groups BFD-ISIS protocols isis interface <*> family inet bfd-liveness-detection minimum-interval 100"
+          - "set groups BFD-ISIS protocols isis interface <*> family inet bfd-liveness-detection multiplier 3"
+          - "set groups ISIS-LEVEL-2 protocols isis interface <*> lsp-interval 33"
+          - "set groups ISIS-LEVEL-2 protocols isis interface <*> point-to-point"
+          - "set groups ISIS-LEVEL-2 protocols isis interface <*> level 2 hello-authentication-key P@asSW0rd"
+          - "set groups ISIS-LEVEL-2 protocols isis interface <*> level 2 hello-authentication-type md5"
+          - "set groups ISIS-LEVEL-2 protocols isis interface <*> level 2 hello-interval 10"
+          - "set groups ISIS-LEVEL-2 protocols isis interface <*> level 2 hold-time 30"
+          - "set groups ISIS-LEVEL-2 protocols isis interface <*> level 1 disable"
+          - "set protocols isis apply-groups [ BFD-ISIS ISIS-LEVEL-2 ]"
+      register: response
+    - name: Print the response
+      debug:
+        var: response

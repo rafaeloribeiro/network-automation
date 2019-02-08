@@ -1,0 +1,26 @@
+---
+- name: Load and commit Timezone configuration data on a device running Junos OS
+  hosts: routers
+  roles:
+    - Juniper.junos 
+  connection: local
+  gather_facts: no
+  tasks: 
+    - name: Checking NETCONF connectivity
+      wait_for: 
+        host: "{{ inventory_hostname }}" 
+        port: 830  
+        timeout: 5
+    - name: Apply Timezone configuration and commit
+      juniper_junos_config: 
+        user: "{{ username }}"
+        password: "{{ password }}"
+        load: "set"
+        format: "text"
+        comment: "Applying the correct Timezone - Ansible-configured"
+        lines:
+          - "set system time-zone America/Sao_Paulo"
+      register: response
+    - name: Print the response
+      debug:
+        var: response

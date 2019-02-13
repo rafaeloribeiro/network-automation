@@ -3,3 +3,7 @@
 * Health checks
 
 ## Sample Inventory file included - 'routers'
+
+# TODO
+* Document all functions
+* Explain all assumptions

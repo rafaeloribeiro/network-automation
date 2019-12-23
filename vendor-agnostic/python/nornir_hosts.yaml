@@ -1,0 +1,52 @@
+---
+ROUTER001:
+    hostname: ROUTER001
+    port: 22
+    username: user
+    password: passwd
+    platform: junos
+    groups:
+        - ROUTERS
+    data:
+        site: SITE01
+        role: router
+        type: network_device
+
+ROUTER002:
+    hostname: ROUTER002
+    port: 22
+    username: user
+    password: passw
+    platform: ios
+    groups:
+        - ROUTERS
+    data:
+        site: SITE01
+        role: router
+        type: network_device
+
+SWITCH001:
+    hostname: SWITCH001
+    port: 23
+    username: user
+    password: pass
+    platform: eos
+    groups:
+        - SWITCHES
+    data:
+        site: SITE01
+        role: switch
+        type: network_device
+
+SWITCH002:
+    hostname: SWITCH002
+    port: 23
+    username: user
+    password: pass
+    platform: eos
+    groups:
+        - SWITCHES
+    data:
+        site: SITE01
+        role: switch
+        type: network_device

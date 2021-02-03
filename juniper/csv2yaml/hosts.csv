@@ -1,0 +1,9 @@
+# device,IPADDR,port,user,pw,group(optional)
+# -- If your connection is over SSH tunnels to your own host, please
+#    write 'host.docker.internal' on the IPADDR column.
+core_router_11,2001:db8:abcd::1:1,22,core_user,core_passwd,core
+core_router_12,2001:db8:abcd::1:2,22,core_user,core_passwd,core
+edge_router_21,2001:db8:ef21::2:1,22,edge_user,edge_passwd,edge
+edge_router_22,2001:db8:ef22::2:2,22,edge_user,edge_passwd,edge
+old_switch_01,172.30.1.1,23,old_user,old_passwd,
+old_switch_02,172.30.1.2,23,old_user,old_passwd,

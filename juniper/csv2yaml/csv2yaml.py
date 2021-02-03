@@ -17,8 +17,6 @@ import time
 
 #### Global Variables ####
 
-data = time.strftime('%Y%m%d', time.localtime())
-
 def touch(fname):
     '''
 

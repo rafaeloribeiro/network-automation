@@ -49,10 +49,7 @@ def read_csv(file_name):
 
       1) If the 'port' is equal to 23, the device will be inserted on the
          'all_telnet' group.
-      2) Else, it will be added to an 'other' group. Mind you that these
-         devices will not have their inventory collected by the either the
-         ansible ad-hoc commands or the playbook destined for the
-         telnet-accessible devices.
+      2) Else, it will be added to an 'other' group.
 
     '''
 

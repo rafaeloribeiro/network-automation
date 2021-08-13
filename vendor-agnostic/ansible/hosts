@@ -1,0 +1,13 @@
+[DC01]
+leaf01  ansible_host="2001:db8:c0a8:ff::2"
+leaf02  ansible_host="2001:db8:c0a8:ff::3"
+leaf03  ansible_host="2001:db8:c0a8:ff::4"
+leaf04  ansible_host="2001:db8:c0a8:ff::5"
+spine01 ansible_host="2001:db8:c0a8:ff::6"
+spine02 ansible_host="2001:db8:c0a8:ff::7"
+
+[DC01:vars]
+ansible_user="user"
+ansible_port="22"
+ansible_ssh_pass="Root123@"
+ansible_connection=network_cli

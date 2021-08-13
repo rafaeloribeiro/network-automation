@@ -1,0 +1,32 @@
+---
+- name: Remove Ansible-included excessive double-quotes, square brackets, et cetera.
+  hosts: all
+  strategy: free
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Regex to remove starting square bracket
+      ansible.builtin.replace:
+        path: "{{ item }}"
+        regexp: '^\133'
+      with_fileglob: '{{ inventory_hostname  }}*.txt'
+    - name: Regex to remove leading spaces and starting quotes
+      ansible.builtin.replace:
+        path: "{{ item }}"
+        regexp: "^    \""
+      with_fileglob: '{{ inventory_hostname  }}*.txt'
+    - name: Regex to remove trailing quotes w/ commas
+      ansible.builtin.replace:
+        path: "{{ item }}"
+        regexp: "\",$"
+      with_fileglob: '{{ inventory_hostname  }}*.txt'
+    - name: Regex to remove trailing quotes w/o commas
+      ansible.builtin.replace:
+        path: "{{ item }}"
+        regexp: "\"$"
+      with_fileglob: '{{ inventory_hostname  }}*.txt'
+    - name: Regex to remove ending square bracket
+      ansible.builtin.replace:
+        path: "{{ item }}"
+        regexp: "]$"
+      with_fileglob: '{{ inventory_hostname  }}*.txt'

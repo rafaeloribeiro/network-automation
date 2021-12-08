@@ -3,6 +3,9 @@ Network Automation scripts - either Ansible, Python, Python3...or else!
 
 ## Directory structure:
 ```
+├── cRPD
+│   ├── host_vars
+│   ├── network_state
 ├── juniper
 │   ├── ansible
 │   ├── cRPD

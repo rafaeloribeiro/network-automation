@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 __author__ = 'Rafael de Oliveira Ribeiro'
-__email__ = 'rafael.ribeiro@br.routzgroup.com'
+__email__ = 'rafael.ribeiro@ieee.org'
 
 #### Library Imports ####
 

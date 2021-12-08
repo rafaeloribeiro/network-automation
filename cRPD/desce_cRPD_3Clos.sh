@@ -2,7 +2,7 @@
 #
 # Script para desligamento dos containers docker:
 # e redes associadas
-#   <rafael.ribeiro@br.routzgroup.com>
+#   <rafael.ribeiro@ieee.org>
 #
 
 # Desassociação de redes:

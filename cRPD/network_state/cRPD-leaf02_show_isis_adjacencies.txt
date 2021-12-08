@@ -1,0 +1,5 @@
+
+
+Interface             System         L State        Hold (secs) SNPA
+eth1                  cRPD-spine01   2  Up                   20
+eth2                  cRPD-spine02   2  Up                   24

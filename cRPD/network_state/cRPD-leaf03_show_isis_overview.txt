@@ -1,0 +1,40 @@
+
+
+Instance: master
+  Router ID: 172.30.60.3
+  IPv6 Router ID: 2001:db8:c0a8:ff::4
+  Hostname: cRPD-leaf03
+  Sysid: 5678.9012.3403
+  Areaid: 49.1234
+  Adjacency holddown: enabled
+  Maximum Areas: 3
+  LSP life time: 1200
+  Attached bit evaluation: enabled
+  SPF delay: 200 msec, SPF holddown: 5000 msec, SPF rapid runs: 3
+  IPv4 is enabled, IPv6 is enabled, SPRING based MPLS is enabled
+  Traffic engineering: enabled
+  Traffic engineering v6: disabled
+  Restart: Disabled
+    Helper mode: Enabled
+  Layer2-map: Disabled
+  Source Packet Routing (SPRING): Enabled
+    SRGB Config Range :
+      SRGB Start-Label : 60000, SRGB Index-Range : 4000
+    SRGB Block Allocation: Success
+      SRGB Start Index : 60000, SRGB Size : 4000, Label-Range: [ 60000, 63999 ]
+    Node Segments: Enabled
+      Ipv4 Index : 1403, Ipv6 Index : 1603
+    SRv6: Disabled
+  Post Convergence Backup: Disabled
+  Level 1
+    Internal route preference: 15
+    External route preference: 160
+    Prefix export count: 0
+    Wide metrics are enabled, Narrow metrics are enabled
+    Source Packet Routing is enabled
+  Level 2
+    Internal route preference: 18
+    External route preference: 165
+    Prefix export count: 0
+    Wide metrics are enabled, Narrow metrics are enabled
+    Source Packet Routing is enabled

@@ -1,0 +1,61 @@
+
+
+cRPD-leaf01
+  Interface: eth1, Level: 2, State: Up, Expires in 25 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 00:03:43 ago
+  Circuit type: 2, Speaks: IP, IPv6
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  IP addresses: 10.0.11.2
+  IPv6 addresses: fe80::42:aff:fe00:b02
+  IPv6 Global Interface Address: 2001:db8:a0:b::2
+  Level 2 IPv4 Adj-SID: 22
+  Level 2 IPv6 Adj-SID: 23
+  Transition log:
+  When                  State        Event           Down reason
+  Thu Aug 26 13:55:36   Up           Seenself        
+
+cRPD-leaf02
+  Interface: eth2, Level: 2, State: Up, Expires in 23 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 00:03:43 ago
+  Circuit type: 2, Speaks: IP, IPv6
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  IP addresses: 10.0.21.2
+  IPv6 addresses: fe80::42:aff:fe00:1502
+  IPv6 Global Interface Address: 2001:db8:a0:15::2
+  Level 2 IPv4 Adj-SID: 20
+  Level 2 IPv6 Adj-SID: 21
+  Transition log:
+  When                  State        Event           Down reason
+  Thu Aug 26 13:55:36   Up           Seenself        
+
+cRPD-leaf03
+  Interface: eth3, Level: 2, State: Up, Expires in 21 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 00:04:34 ago
+  Circuit type: 2, Speaks: IP, IPv6
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  IP addresses: 10.0.31.2
+  IPv6 addresses: fe80::42:aff:fe00:1f02
+  IPv6 Global Interface Address: 2001:db8:a0:1f::2
+  Level 2 IPv4 Adj-SID: 16
+  Level 2 IPv6 Adj-SID: 17
+  Transition log:
+  When                  State        Event           Down reason
+  Thu Aug 26 13:54:44   Up           Seenself        
+
+cRPD-leaf04
+  Interface: eth4, Level: 2, State: Up, Expires in 22 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 00:04:09 ago
+  Circuit type: 2, Speaks: IP, IPv6
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  IP addresses: 10.0.41.3
+  IPv6 addresses: fe80::42:aff:fe00:2903
+  IPv6 Global Interface Address: 2001:db8:a0:29::3
+  Level 2 IPv4 Adj-SID: 18
+  Level 2 IPv6 Adj-SID: 19
+  Transition log:
+  When                  State        Event           Down reason
+  Thu Aug 26 13:55:10   Up           Seenself        

@@ -1,0 +1,7 @@
+
+
+Interface             System         L State        Hold (secs) SNPA
+eth1                  cRPD-leaf01    2  Up                   20
+eth2                  cRPD-leaf02    2  Up                   19
+eth3                  cRPD-leaf03    2  Up                   21
+eth4                  cRPD-leaf04    2  Up                   25

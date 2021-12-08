@@ -1,0 +1,30 @@
+---
+- name: Enable SR-MPLS over ISIS on cRPDs
+  hosts: cRPD
+  strategy: free
+  roles:
+    - Juniper.junos
+  connection: network_cli
+  gather_facts: false
+  tasks:
+    - name: Template rendering 
+      template:
+        src: SR_MPLS_over_ISIS.j2
+        dest: "host_vars/{{ inventory_hostname }}_sr_mpls_base_config.txt"
+        mode: 0644
+        owner: rribeiro
+        group: rribeiro
+
+    - name: Apply the config rendered previously
+      juniper_junos_config:
+        config_mode: 'private'
+        load: 'merge'
+        check: yes
+        commit: yes
+        comment: "{{ inventory_hostname }} --> Configuring base SR-MPLS over ISIS - Ansible-configured"
+        src: "host_vars/{{ inventory_hostname }}_sr_mpls_base_config.txt"
+      register: response
+
+    - name: Print the config changes.
+      debug:
+        var: response.diff_lines

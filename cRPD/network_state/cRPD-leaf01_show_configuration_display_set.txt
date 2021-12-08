@@ -1,0 +1,48 @@
+
+
+set version 20210613.182046_builder.r1194332
+set system root-authentication encrypted-password "$6$fypXi$4ZiJ6nWFftwG0k9xyfxaGKbZfXmioi7tFV7GFQaF6iAOmsuTiA1M.UjgXZ0Bx/pLukS5oZKpYIGfzjItU387n0
+set system services ssh root-login allow
+set system services netconf ssh port 830
+set system license keys ## SECRET-DATA ##
+set interfaces lo0 unit 0 family iso address 49.1234.5678.9012.3401.00
+set policy-options prefix-list LEAF_STATIC_ROUTES 10.1.0.0/16
+set policy-options prefix-list LEAF_STATIC_ROUTES_IPv6 2001:db8:a1::/48
+set policy-options policy-statement ACCEPT_ALL then accept
+set policy-options policy-statement STATIC_2_BGP term ACCEPT_STATIC_ROUTES from protocol static
+set policy-options policy-statement STATIC_2_BGP term ACCEPT_STATIC_ROUTES from prefix-list-filter LEAF_STATIC_ROUTES orlonger
+set policy-options policy-statement STATIC_2_BGP term ACCEPT_STATIC_ROUTES then accept
+set policy-options policy-statement STATIC_2_BGP term LAST_TERM then reject
+set policy-options policy-statement STATIC_2_BGP_IPv6 term ACCEPT_STATIC_ROUTES from protocol static
+set policy-options policy-statement STATIC_2_BGP_IPv6 term ACCEPT_STATIC_ROUTES from rib inet6.0
+set policy-options policy-statement STATIC_2_BGP_IPv6 term ACCEPT_STATIC_ROUTES from prefix-list-filter LEAF_STATIC_ROUTES_IPv6 orlonger
+set policy-options policy-statement STATIC_2_BGP_IPv6 term ACCEPT_STATIC_ROUTES then accept
+set policy-options policy-statement STATIC_2_BGP_IPv6 term LAST_TERM then reject
+set routing-options autonomous-system 4200001234
+set routing-options rib inet6.0 static route 2001:db8:a1::/48 discard
+set routing-options static route 10.1.0.0/16 discard
+set protocols bgp group IBGP-LEAVES type internal
+set protocols bgp group IBGP-LEAVES import ACCEPT_ALL
+set protocols bgp group IBGP-LEAVES export STATIC_2_BGP
+set protocols bgp group IBGP-LEAVES neighbor 192.168.255.3 description cRPD-leaf02
+set protocols bgp group IBGP-LEAVES neighbor 192.168.255.4 description cRPD-leaf03
+set protocols bgp group IBGP-LEAVES neighbor 192.168.255.5 description cRPD-leaf04
+set protocols bgp group IBGP-LEAVES-IPv6 type internal
+set protocols bgp group IBGP-LEAVES-IPv6 import ACCEPT_ALL
+set protocols bgp group IBGP-LEAVES-IPv6 export STATIC_2_BGP_IPv6
+set protocols bgp group IBGP-LEAVES-IPv6 neighbor 2001:db8:c0a8:ff::3 description cRPD-leaf02
+set protocols bgp group IBGP-LEAVES-IPv6 neighbor 2001:db8:c0a8:ff::4 description cRPD-leaf03
+set protocols bgp group IBGP-LEAVES-IPv6 neighbor 2001:db8:c0a8:ff::5 description cRPD-leaf04
+set protocols bgp advertise-inactive
+set protocols isis interface all level 1 disable
+set protocols isis interface eth0 passive
+set protocols isis interface eth1 point-to-point
+set protocols isis interface eth2 point-to-point
+set protocols isis interface lo0.0 passive
+set protocols isis source-packet-routing srgb start-label 60000
+set protocols isis source-packet-routing srgb index-range 4000
+set protocols isis source-packet-routing node-segment ipv4-index 1401
+set protocols isis source-packet-routing node-segment ipv6-index 1601
+set protocols isis level 1 disable
+set protocols mpls interface eth1
+set protocols mpls interface eth2

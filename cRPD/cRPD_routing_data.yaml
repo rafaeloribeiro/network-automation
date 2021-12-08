@@ -1,0 +1,139 @@
+---
+- name: List current cRPD routing status
+  hosts: cRPD
+  strategy: free
+  roles:
+    - Juniper.junos
+  connection: network_cli
+  gather_facts: false
+  tasks:
+    - name: Show ISIS overview
+      juniper_junos_rpc:
+        rpc: get-isis-overview-information
+        format: text
+      register: response
+    #- name: Print the response
+    #  debug:
+    #    var: response
+    - name: Writing ISIS overview information to file
+      copy:
+        content: "{{ response.stdout_lines | to_nice_json }}"
+        dest: "network_state/{{ inventory_hostname }}_show_isis_overview.txt"
+        mode: 0644
+        owner: rribeiro
+        group: rribeiro
+
+    - name: List the status of ISIS adjacencies
+      juniper_junos_rpc:
+        rpc: get-isis-adjacency-information
+        format: text
+      register: response
+    #- name: Print the response
+    #  debug:
+    #    var: response
+    - name: Writing ISIS adjacencies' information to file
+      copy:
+        content: "{{ response.stdout_lines | to_nice_json }}"
+        dest: "network_state/{{ inventory_hostname }}_show_isis_adjacencies.txt"
+        mode: 0644
+        owner: rribeiro
+        group: rribeiro
+
+    - name: List the status of ISIS adjacencies - extensive
+      juniper_junos_rpc:
+        rpc: get-isis-adjacency-information
+        format: text
+        kwargs: { 'extensive': 'True'} 
+      register: response
+    #- name: Print the response
+    #  debug:
+    #    var: response
+    - name: Writing ISIS adjacencies' - extensive - information to file
+      copy:
+        content: "{{ response.stdout_lines | to_nice_json }}"
+        dest: "network_state/{{ inventory_hostname }}_show_isis_adjacencies_extensive.txt"
+        mode: 0644
+        owner: rribeiro
+        group: rribeiro
+
+    - name: Check ISIS database
+      juniper_junos_rpc:
+        rpc: get-isis-database-information
+        format: text
+      register: response
+    #- name: Print the response
+    #  debug:
+    #    var: response
+    - name: Writing ISIS database information to file
+      copy:
+        content: "{{ response.stdout_lines | to_nice_json }}"
+        dest: "network_state/{{ inventory_hostname }}_show_isis_database.txt"
+        mode: 0644
+        owner: rribeiro
+        group: rribeiro
+
+    - name: Check ISIS database - extensive
+      juniper_junos_rpc:
+        rpc: get-isis-database-information
+        format: text
+        kwargs: { 'extensive': 'True'} 
+      register: response
+    #- name: Print the response
+    #  debug:
+    #    var: response
+    - name: Writing ISIS database (extensive) information to file
+      copy:
+        content: "{{ response.stdout_lines | to_nice_json }}"
+        dest: "network_state/{{ inventory_hostname }}_show_isis_database_extensive.txt"
+        mode: 0644
+        owner: rribeiro
+        group: rribeiro
+
+    - name: Inspect MPLS Label usage
+      juniper_junos_rpc:
+        rpc: mpls-label-space-usage
+        format: text
+      register: response
+    #- name: Print the response
+    #  debug:
+    #    var: response
+    - name: Writing MPLS Label usabe information to file
+      copy:
+        content: "{{ response.stdout_lines | to_nice_json }}"
+        dest: "network_state/{{ inventory_hostname }}_show_mpls_label_usage.txt"
+        mode: 0644
+
+    - name: Checking BGP status - LEAF ONLY!
+      juniper_junos_rpc:
+        rpc: get-bgp-summary-information
+        format: text
+      register: response
+      when: "'leaf' is in inventory_hostname"
+    #- name: Print the response
+    #  debug:
+    #    var: response
+    - name: Writing BGP status information to file
+      copy:
+        content: "{{ response.stdout_lines | to_nice_json }}"
+        dest: "network_state/{{ inventory_hostname }}_show_bgp_summary.txt"
+        mode: 0644
+        owner: rribeiro
+        group: rribeiro
+      when: "'leaf' is in inventory_hostname"
+
+    - name: Check routing tables
+      juniper_junos_rpc:
+        rpc: get-route-information 
+        format: text
+      register: response
+    #- name: Print the response
+    #  debug:
+    #    var: response
+    - name: Writing routing tables information to file
+      copy:
+        content: "{{ response.stdout_lines | to_nice_json }}"
+        dest: "network_state/{{ inventory_hostname }}_show_route.txt"
+        mode: 0644
+        owner: rribeiro
+        group: rribeiro
+

@@ -1,0 +1,14 @@
+
+
+IS-IS level 1 link-state database:
+  0 LSPs
+
+IS-IS level 2 link-state database:
+LSP ID                      Sequence Checksum Lifetime Attributes
+cRPD-leaf01.00-00                0x7   0x9249      965 L1 L2
+cRPD-leaf02.00-00                0x9   0x66ba      967 L1 L2
+cRPD-leaf03.00-00                0x9   0x8dd6      938 L1 L2
+cRPD-leaf04.00-00                0x7   0x8b2a      966 L1 L2
+cRPD-spine01.00-00               0xa   0xd80a      959 L1 L2
+cRPD-spine02.00-00               0xb   0x276a      969 L1 L2
+  6 LSPs

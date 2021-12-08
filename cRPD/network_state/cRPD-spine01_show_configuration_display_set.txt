@@ -1,0 +1,24 @@
+
+
+set version 20210613.182046_builder.r1194332
+set system root-authentication encrypted-password "$6$WJtnB$7hNHeHzKk1m9qgIzQG8tfkiULtlTDAVAwQP7WnPalWdPWlv/PsV8Cskzt7FEDEprDPZ0fc7j52xxUR.obtFay0
+set system services ssh root-login allow
+set system services netconf ssh port 830
+set system license keys ## SECRET-DATA ##
+set interfaces lo0 unit 0 family iso address 49.1234.5678.9012.3411.00
+set protocols isis interface all level 1 disable
+set protocols isis interface eth0 passive
+set protocols isis interface eth1 point-to-point
+set protocols isis interface eth2 point-to-point
+set protocols isis interface eth3 point-to-point
+set protocols isis interface eth4 point-to-point
+set protocols isis interface lo0.0 passive
+set protocols isis source-packet-routing srgb start-label 60000
+set protocols isis source-packet-routing srgb index-range 4000
+set protocols isis source-packet-routing node-segment ipv4-index 2401
+set protocols isis source-packet-routing node-segment ipv6-index 2601
+set protocols isis level 1 disable
+set protocols mpls interface eth1
+set protocols mpls interface eth2
+set protocols mpls interface eth3
+set protocols mpls interface eth4

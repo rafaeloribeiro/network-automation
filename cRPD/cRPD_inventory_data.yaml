@@ -1,0 +1,72 @@
+---
+- name: List current cRPD Inventory
+  hosts: cRPD
+  strategy: free
+  roles:
+    - Juniper.junos
+  connection: network_cli
+  gather_facts: false
+  tasks:
+    - name: List the status of all available interfaces
+      juniper_junos_command:
+        commands:
+          - "show interfaces routing"
+      register: response
+    #- name: Print the response
+    #  debug:
+    #    var: response
+    - name: Writing interfaces' status information to file
+      copy:
+        content: "{{ response.stdout_lines | to_nice_json }}"
+        dest: "network_state/{{ inventory_hostname }}_show_interfaces_routing.txt"
+        mode: 0644
+        owner: rribeiro
+        group: rribeiro
+
+    - name: Saving current JunOS Version
+      juniper_junos_command:
+        commands:
+          - "show version"
+      register: response
+    #- name: Print the response
+    #  debug:
+    #    var: response
+    - name: Writing Junos Version information to file
+      copy:
+        content: "{{ response.stdout_lines | to_nice_json }}"
+        dest: "network_state/{{ inventory_hostname }}_show_version.txt"
+        mode: 0644
+        owner: rribeiro
+        group: rribeiro
+
+    - name: Saving current configuration
+      juniper_junos_command:
+        commands:
+          - "show configuration"
+      register: response
+    #- name: Print the response
+    #  debug:
+    #    var: response
+    - name: Writing Junos Version information to file
+      copy:
+        content: "{{ response.stdout_lines | to_nice_json }}"
+        dest: "network_state/{{ inventory_hostname }}_show_configuration.txt"
+        mode: 0644
+        owner: rribeiro
+        group: rribeiro
+
+    - name: Saving current configuration - display set style
+      juniper_junos_command:
+        commands:
+          - "show configuration | display set"
+      register: response
+    #- name: Print the response
+    #  debug:
+    #    var: response
+    - name: Writing Junos Version information to file
+      copy:
+        content: "{{ response.stdout_lines | to_nice_json }}"
+        dest: "network_state/{{ inventory_hostname }}_show_configuration_display_set.txt"
+        mode: 0644
+        owner: rribeiro
+        group: rribeiro

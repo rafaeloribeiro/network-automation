@@ -1,0 +1,627 @@
+
+
+IS-IS level 1 link-state database:
+
+IS-IS level 2 link-state database:
+
+cRPD-leaf01.00-00 Sequence: 0x7, Checksum: 0x9249, Lifetime: 956 secs
+  IPV4 Index: 1401, IPV6 Index: 1601
+  Node Segment Blocks Advertised:
+    Start Index : 0, Size : 4000, Label-Range: [ 60000, 63999 ]
+   IS neighbor: cRPD-spine01.00               Metric:       10
+     Two-way fragment: cRPD-spine01.00-00, Two-way first fragment: cRPD-spine01.00-00
+     P2P IPv4 Adj-SID:      16, Weight:   0, Flags: --VL--
+     P2P IPv6 Adj-SID:      17, Weight:   0, Flags: F-VL--
+   IS neighbor: cRPD-spine02.00               Metric:       10
+     Two-way fragment: cRPD-spine02.00-00, Two-way first fragment: cRPD-spine02.00-00
+     P2P IPv4 Adj-SID:      18, Weight:   0, Flags: --VL--
+     P2P IPv6 Adj-SID:      19, Weight:   0, Flags: F-VL--
+   IP prefix: 10.0.11.0/29                    Metric:       10 Internal Up
+   IP prefix: 10.0.12.0/29                    Metric:       10 Internal Up
+   IP prefix: 172.30.60.1/32                  Metric:        0 Internal Up
+   IP prefix: 192.168.255.0/24                Metric:       10 Internal Up
+   V6 prefix: ::/96                           Metric:       10 Internal Up
+   V6 prefix: 2001:db8:a0:b::/64              Metric:       10 Internal Up
+   V6 prefix: 2001:db8:a0:c::/64              Metric:       10 Internal Up
+   V6 prefix: 2001:db8:ac1e:3c::1/128         Metric:        0 Internal Up
+   V6 prefix: 2001:db8:c0a8:ff::/64           Metric:       10 Internal Up
+
+  Header: LSP ID: cRPD-leaf01.00-00, Length: 506 bytes
+    Allocated length: 506 bytes, Router ID: 172.30.60.1
+    Remaining lifetime: 956 secs, Level: 2, Interface: 41
+    Estimated free bytes: 0, Actual free bytes: 0
+    Aging timer expires in: 956 secs
+    Protocols: IP, IPv6
+
+  Packet: LSP ID: cRPD-leaf01.00-00, Length: 506 bytes, Lifetime : 1182 secs
+    Checksum: 0x9249, Sequence: 0x7, Attributes: 0x3 <L1 L2>
+    NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
+    Packet type: 20, Packet version: 1, Max area: 0
+
+  TLVs:
+    Area address: 49.1234 (3)
+    LSP Buffer Size: 1492
+    Speaks: IP
+    Speaks: IPV6
+    IP router id: 172.30.60.1
+    IP address: 172.30.60.1
+    IPv6 TE Router ID: 2001:db8:c0a8:ff::2
+    Hostname: cRPD-leaf01
+    IP prefix: 192.168.255.0/24, Internal, Metric: default 10, Up
+    IP prefix: 172.30.60.1/32, Internal, Metric: default 0, Up
+    IP prefix: 10.0.11.0/29, Internal, Metric: default 10, Up
+    IP prefix: 10.0.12.0/29, Internal, Metric: default 10, Up
+    IP extended prefix: 192.168.255.0/24 metric 10 up
+    IP extended prefix: 172.30.60.1/32 metric 0 up
+      8 bytes of subtlvs
+      Node SID, Flags: 0x40(R:0,N:1,P:0,E:0,V:0,L:0), Algo: SPF(0), Value: 1401
+    IP extended prefix: 10.0.11.0/29 metric 10 up
+    IP extended prefix: 10.0.12.0/29 metric 10 up
+    IPv6 prefix: 2001:db8:c0a8:ff::/64 Metric 10 Up
+    IPv6 prefix: ::/96 Metric 10 Up
+    IPv6 prefix: 2001:db8:ac1e:3c::1/128 Metric 0 Up
+      8 bytes of subtlvs
+      Node SID, Flags: 0x40(R:0,N:1,P:0,E:0,V:0,L:0), Algo: SPF(0), Value: 1601
+    IPv6 prefix: 2001:db8:a0:b::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:a0:c::/64 Metric 10 Up
+    Router Capability:  Router ID 172.30.60.1, Flags: 0x00
+      SPRING Capability - Flags: 0xc0(I:1,V:1), Range: 4000, SID-Label: 60000
+      SPRING Algorithm - Algo: 0
+      SPRING Algorithm - Algo: 1
+      IPv6 TE Router Id: 2001:db8:c0a8:ff::2
+    IS neighbor: cRPD-spine01.00, Internal, Metric: default 10
+    IS neighbor: cRPD-spine02.00, Internal, Metric: default 10
+    Extended IS Reachability TLV, Type: 22, Length: 166
+    IS extended neighbor: cRPD-spine01.00, Metric: default 10 SubTLV len: 72
+      IP address: 10.0.11.2
+      IPv6 address: 2001:db8:a0:b::2
+      Neighbor's IP address: 10.0.11.3
+      Neighbor's IPv6 address: 2001:db8:a0:b::3
+      Local interface index: 33, Remote interface index: 35
+      P2P IPV6 Adj-SID - Flags:0xb0(F:1,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 17
+      P2P IPv6 Adj-SID:      17, Weight:   0, Flags: F-VL--
+      P2P IPV4 Adj-SID - Flags:0x30(F:0,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 16
+      P2P IPv4 Adj-SID:      16, Weight:   0, Flags: --VL--
+    IS extended neighbor: cRPD-spine02.00, Metric: default 10 SubTLV len: 72
+      IP address: 10.0.12.2
+      IPv6 address: 2001:db8:a0:c::2
+      Neighbor's IP address: 10.0.12.3
+      Neighbor's IPv6 address: 2001:db8:a0:c::3
+      Local interface index: 37, Remote interface index: 39
+      P2P IPV6 Adj-SID - Flags:0xb0(F:1,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 19
+      P2P IPv6 Adj-SID:      19, Weight:   0, Flags: F-VL--
+      P2P IPV4 Adj-SID - Flags:0x30(F:0,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 18
+      P2P IPv4 Adj-SID:      18, Weight:   0, Flags: --VL--
+  No queued transmissions
+
+cRPD-leaf02.00-00 Sequence: 0x9, Checksum: 0x66ba, Lifetime: 962 secs
+  IPV4 Index: 1402, IPV6 Index: 1602
+  Node Segment Blocks Advertised:
+    Start Index : 0, Size : 4000, Label-Range: [ 60000, 63999 ]
+   IS neighbor: cRPD-spine01.00               Metric:       10
+     Two-way fragment: cRPD-spine01.00-00, Two-way first fragment: cRPD-spine01.00-00
+     P2P IPv4 Adj-SID:      16, Weight:   0, Flags: --VL--
+     P2P IPv6 Adj-SID:      17, Weight:   0, Flags: F-VL--
+   IS neighbor: cRPD-spine02.00               Metric:       10
+     Two-way fragment: cRPD-spine02.00-00, Two-way first fragment: cRPD-spine02.00-00
+     P2P IPv4 Adj-SID:      18, Weight:   0, Flags: --VL--
+     P2P IPv6 Adj-SID:      19, Weight:   0, Flags: F-VL--
+   IP prefix: 10.0.21.0/29                    Metric:       10 Internal Up
+   IP prefix: 10.0.22.0/29                    Metric:       10 Internal Up
+   IP prefix: 172.30.60.2/32                  Metric:        0 Internal Up
+   IP prefix: 192.168.255.0/24                Metric:       10 Internal Up
+   V6 prefix: ::/96                           Metric:       10 Internal Up
+   V6 prefix: 2001:db8:a0:15::/64             Metric:       10 Internal Up
+   V6 prefix: 2001:db8:a0:16::/64             Metric:       10 Internal Up
+   V6 prefix: 2001:db8:ac1e:3c::2/128         Metric:        0 Internal Up
+   V6 prefix: 2001:db8:c0a8:ff::/64           Metric:       10 Internal Up
+
+  Header: LSP ID: cRPD-leaf02.00-00, Length: 506 bytes
+    Allocated length: 1492 bytes, Router ID: 172.30.60.2
+    Remaining lifetime: 962 secs, Level: 2, Interface: 0
+    Estimated free bytes: 939, Actual free bytes: 986
+    Aging timer expires in: 962 secs
+    Protocols: IP, IPv6
+
+  Packet: LSP ID: cRPD-leaf02.00-00, Length: 506 bytes, Lifetime : 1198 secs
+    Checksum: 0x66ba, Sequence: 0x9, Attributes: 0x3 <L1 L2>
+    NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
+    Packet type: 20, Packet version: 1, Max area: 0
+
+  TLVs:
+    Area address: 49.1234 (3)
+    LSP Buffer Size: 1492
+    Speaks: IP
+    Speaks: IPV6
+    IP router id: 172.30.60.2
+    IP address: 172.30.60.2
+    IPv6 TE Router ID: 2001:db8:c0a8:ff::3
+    Hostname: cRPD-leaf02
+    IP prefix: 192.168.255.0/24, Internal, Metric: default 10, Up
+    IP prefix: 172.30.60.2/32, Internal, Metric: default 0, Up
+    IP prefix: 10.0.21.0/29, Internal, Metric: default 10, Up
+    IP prefix: 10.0.22.0/29, Internal, Metric: default 10, Up
+    IP extended prefix: 192.168.255.0/24 metric 10 up
+    IP extended prefix: 172.30.60.2/32 metric 0 up
+      8 bytes of subtlvs
+      Node SID, Flags: 0x40(R:0,N:1,P:0,E:0,V:0,L:0), Algo: SPF(0), Value: 1402
+    IP extended prefix: 10.0.21.0/29 metric 10 up
+    IP extended prefix: 10.0.22.0/29 metric 10 up
+    IPv6 prefix: 2001:db8:c0a8:ff::/64 Metric 10 Up
+    IPv6 prefix: ::/96 Metric 10 Up
+    IPv6 prefix: 2001:db8:ac1e:3c::2/128 Metric 0 Up
+      8 bytes of subtlvs
+      Node SID, Flags: 0x40(R:0,N:1,P:0,E:0,V:0,L:0), Algo: SPF(0), Value: 1602
+    IPv6 prefix: 2001:db8:a0:15::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:a0:16::/64 Metric 10 Up
+    Router Capability:  Router ID 172.30.60.2, Flags: 0x00
+      SPRING Capability - Flags: 0xc0(I:1,V:1), Range: 4000, SID-Label: 60000
+      SPRING Algorithm - Algo: 0
+      SPRING Algorithm - Algo: 1
+      IPv6 TE Router Id: 2001:db8:c0a8:ff::3
+    IS neighbor: cRPD-spine01.00, Internal, Metric: default 10
+    IS neighbor: cRPD-spine02.00, Internal, Metric: default 10
+    Extended IS Reachability TLV, Type: 22, Length: 166
+    IS extended neighbor: cRPD-spine01.00, Metric: default 10 SubTLV len: 72
+      IP address: 10.0.21.2
+      IPv6 address: 2001:db8:a0:15::2
+      Neighbor's IP address: 10.0.21.3
+      Neighbor's IPv6 address: 2001:db8:a0:15::3
+      Local interface index: 41, Remote interface index: 43
+      P2P IPV6 Adj-SID - Flags:0xb0(F:1,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 17
+      P2P IPv6 Adj-SID:      17, Weight:   0, Flags: F-VL--
+      P2P IPV4 Adj-SID - Flags:0x30(F:0,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 16
+      P2P IPv4 Adj-SID:      16, Weight:   0, Flags: --VL--
+    IS extended neighbor: cRPD-spine02.00, Metric: default 10 SubTLV len: 72
+      IP address: 10.0.22.2
+      IPv6 address: 2001:db8:a0:16::2
+      Neighbor's IP address: 10.0.22.3
+      Neighbor's IPv6 address: 2001:db8:a0:16::3
+      Local interface index: 45, Remote interface index: 47
+      P2P IPV6 Adj-SID - Flags:0xb0(F:1,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 19
+      P2P IPv6 Adj-SID:      19, Weight:   0, Flags: F-VL--
+      P2P IPV4 Adj-SID - Flags:0x30(F:0,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 18
+      P2P IPv4 Adj-SID:      18, Weight:   0, Flags: --VL--
+  No queued transmissions
+
+cRPD-leaf03.00-00 Sequence: 0x9, Checksum: 0x8dd6, Lifetime: 929 secs
+  IPV4 Index: 1403, IPV6 Index: 1603
+  Node Segment Blocks Advertised:
+    Start Index : 0, Size : 4000, Label-Range: [ 60000, 63999 ]
+   IS neighbor: cRPD-spine01.00               Metric:       10
+     Two-way fragment: cRPD-spine01.00-00, Two-way first fragment: cRPD-spine01.00-00
+     P2P IPv4 Adj-SID:      16, Weight:   0, Flags: --VL--
+     P2P IPv6 Adj-SID:      17, Weight:   0, Flags: F-VL--
+   IS neighbor: cRPD-spine02.00               Metric:       10
+     Two-way fragment: cRPD-spine02.00-00, Two-way first fragment: cRPD-spine02.00-00
+     P2P IPv4 Adj-SID:      18, Weight:   0, Flags: --VL--
+     P2P IPv6 Adj-SID:      19, Weight:   0, Flags: F-VL--
+   IP prefix: 10.0.31.0/29                    Metric:       10 Internal Up
+   IP prefix: 10.0.32.0/29                    Metric:       10 Internal Up
+   IP prefix: 172.30.60.3/32                  Metric:        0 Internal Up
+   IP prefix: 192.168.255.0/24                Metric:       10 Internal Up
+   V6 prefix: ::/96                           Metric:       10 Internal Up
+   V6 prefix: 2001:db8:a0:1f::/64             Metric:       10 Internal Up
+   V6 prefix: 2001:db8:a0:20::/64             Metric:       10 Internal Up
+   V6 prefix: 2001:db8:ac1e:3c::3/128         Metric:        0 Internal Up
+   V6 prefix: 2001:db8:c0a8:ff::/64           Metric:       10 Internal Up
+
+  Header: LSP ID: cRPD-leaf03.00-00, Length: 506 bytes
+    Allocated length: 506 bytes, Router ID: 172.30.60.3
+    Remaining lifetime: 929 secs, Level: 2, Interface: 41
+    Estimated free bytes: 0, Actual free bytes: 0
+    Aging timer expires in: 929 secs
+    Protocols: IP, IPv6
+
+  Packet: LSP ID: cRPD-leaf03.00-00, Length: 506 bytes, Lifetime : 1161 secs
+    Checksum: 0x8dd6, Sequence: 0x9, Attributes: 0x3 <L1 L2>
+    NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
+    Packet type: 20, Packet version: 1, Max area: 0
+
+  TLVs:
+    Area address: 49.1234 (3)
+    LSP Buffer Size: 1492
+    Speaks: IP
+    Speaks: IPV6
+    IP router id: 172.30.60.3
+    IP address: 172.30.60.3
+    IPv6 TE Router ID: 2001:db8:c0a8:ff::4
+    Hostname: cRPD-leaf03
+    IP prefix: 192.168.255.0/24, Internal, Metric: default 10, Up
+    IP prefix: 172.30.60.3/32, Internal, Metric: default 0, Up
+    IP prefix: 10.0.31.0/29, Internal, Metric: default 10, Up
+    IP prefix: 10.0.32.0/29, Internal, Metric: default 10, Up
+    IP extended prefix: 192.168.255.0/24 metric 10 up
+    IP extended prefix: 172.30.60.3/32 metric 0 up
+      8 bytes of subtlvs
+      Node SID, Flags: 0x40(R:0,N:1,P:0,E:0,V:0,L:0), Algo: SPF(0), Value: 1403
+    IP extended prefix: 10.0.31.0/29 metric 10 up
+    IP extended prefix: 10.0.32.0/29 metric 10 up
+    IPv6 prefix: 2001:db8:c0a8:ff::/64 Metric 10 Up
+    IPv6 prefix: ::/96 Metric 10 Up
+    IPv6 prefix: 2001:db8:ac1e:3c::3/128 Metric 0 Up
+      8 bytes of subtlvs
+      Node SID, Flags: 0x40(R:0,N:1,P:0,E:0,V:0,L:0), Algo: SPF(0), Value: 1603
+    IPv6 prefix: 2001:db8:a0:1f::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:a0:20::/64 Metric 10 Up
+    Router Capability:  Router ID 172.30.60.3, Flags: 0x00
+      SPRING Capability - Flags: 0xc0(I:1,V:1), Range: 4000, SID-Label: 60000
+      SPRING Algorithm - Algo: 0
+      SPRING Algorithm - Algo: 1
+      IPv6 TE Router Id: 2001:db8:c0a8:ff::4
+    IS neighbor: cRPD-spine01.00, Internal, Metric: default 10
+    IS neighbor: cRPD-spine02.00, Internal, Metric: default 10
+    Extended IS Reachability TLV, Type: 22, Length: 166
+    IS extended neighbor: cRPD-spine01.00, Metric: default 10 SubTLV len: 72
+      IP address: 10.0.31.2
+      IPv6 address: 2001:db8:a0:1f::2
+      Neighbor's IP address: 10.0.31.3
+      Neighbor's IPv6 address: 2001:db8:a0:1f::3
+      Local interface index: 49, Remote interface index: 51
+      P2P IPV6 Adj-SID - Flags:0xb0(F:1,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 17
+      P2P IPv6 Adj-SID:      17, Weight:   0, Flags: F-VL--
+      P2P IPV4 Adj-SID - Flags:0x30(F:0,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 16
+      P2P IPv4 Adj-SID:      16, Weight:   0, Flags: --VL--
+    IS extended neighbor: cRPD-spine02.00, Metric: default 10 SubTLV len: 72
+      IP address: 10.0.32.2
+      IPv6 address: 2001:db8:a0:20::2
+      Neighbor's IP address: 10.0.32.3
+      Neighbor's IPv6 address: 2001:db8:a0:20::3
+      Local interface index: 53, Remote interface index: 59
+      P2P IPV6 Adj-SID - Flags:0xb0(F:1,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 19
+      P2P IPv6 Adj-SID:      19, Weight:   0, Flags: F-VL--
+      P2P IPV4 Adj-SID - Flags:0x30(F:0,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 18
+      P2P IPv4 Adj-SID:      18, Weight:   0, Flags: --VL--
+  No queued transmissions
+
+cRPD-leaf04.00-00 Sequence: 0x7, Checksum: 0x8b2a, Lifetime: 957 secs
+  IPV4 Index: 1404, IPV6 Index: 1604
+  Node Segment Blocks Advertised:
+    Start Index : 0, Size : 4000, Label-Range: [ 60000, 63999 ]
+   IS neighbor: cRPD-spine01.00               Metric:       10
+     Two-way fragment: cRPD-spine01.00-00, Two-way first fragment: cRPD-spine01.00-00
+     P2P IPv4 Adj-SID:      16, Weight:   0, Flags: --VL--
+     P2P IPv6 Adj-SID:      17, Weight:   0, Flags: F-VL--
+   IS neighbor: cRPD-spine02.00               Metric:       10
+     Two-way fragment: cRPD-spine02.00-00, Two-way first fragment: cRPD-spine02.00-00
+     P2P IPv4 Adj-SID:      18, Weight:   0, Flags: --VL--
+     P2P IPv6 Adj-SID:      19, Weight:   0, Flags: F-VL--
+   IP prefix: 10.0.41.0/29                    Metric:       10 Internal Up
+   IP prefix: 10.0.42.0/29                    Metric:       10 Internal Up
+   IP prefix: 172.30.60.4/32                  Metric:        0 Internal Up
+   IP prefix: 192.168.255.0/24                Metric:       10 Internal Up
+   V6 prefix: ::/96                           Metric:       10 Internal Up
+   V6 prefix: 2001:db8:a0:29::/64             Metric:       10 Internal Up
+   V6 prefix: 2001:db8:a0:2a::/64             Metric:       10 Internal Up
+   V6 prefix: 2001:db8:ac1e:3c::4/128         Metric:        0 Internal Up
+   V6 prefix: 2001:db8:c0a8:ff::/64           Metric:       10 Internal Up
+
+  Header: LSP ID: cRPD-leaf04.00-00, Length: 506 bytes
+    Allocated length: 506 bytes, Router ID: 172.30.60.4
+    Remaining lifetime: 957 secs, Level: 2, Interface: 41
+    Estimated free bytes: 0, Actual free bytes: 0
+    Aging timer expires in: 957 secs
+    Protocols: IP, IPv6
+
+  Packet: LSP ID: cRPD-leaf04.00-00, Length: 506 bytes, Lifetime : 1183 secs
+    Checksum: 0x8b2a, Sequence: 0x7, Attributes: 0x3 <L1 L2>
+    NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
+    Packet type: 20, Packet version: 1, Max area: 0
+
+  TLVs:
+    Area address: 49.1234 (3)
+    LSP Buffer Size: 1492
+    Speaks: IP
+    Speaks: IPV6
+    IP router id: 172.30.60.4
+    IP address: 172.30.60.4
+    IPv6 TE Router ID: 2001:db8:c0a8:ff::5
+    Hostname: cRPD-leaf04
+    IP prefix: 192.168.255.0/24, Internal, Metric: default 10, Up
+    IP prefix: 172.30.60.4/32, Internal, Metric: default 0, Up
+    IP prefix: 10.0.41.0/29, Internal, Metric: default 10, Up
+    IP prefix: 10.0.42.0/29, Internal, Metric: default 10, Up
+    IP extended prefix: 192.168.255.0/24 metric 10 up
+    IP extended prefix: 172.30.60.4/32 metric 0 up
+      8 bytes of subtlvs
+      Node SID, Flags: 0x40(R:0,N:1,P:0,E:0,V:0,L:0), Algo: SPF(0), Value: 1404
+    IP extended prefix: 10.0.41.0/29 metric 10 up
+    IP extended prefix: 10.0.42.0/29 metric 10 up
+    IPv6 prefix: 2001:db8:c0a8:ff::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:ac1e:3c::4/128 Metric 0 Up
+      8 bytes of subtlvs
+      Node SID, Flags: 0x40(R:0,N:1,P:0,E:0,V:0,L:0), Algo: SPF(0), Value: 1604
+    IPv6 prefix: ::/96 Metric 10 Up
+    IPv6 prefix: 2001:db8:a0:29::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:a0:2a::/64 Metric 10 Up
+    Router Capability:  Router ID 172.30.60.4, Flags: 0x00
+      SPRING Capability - Flags: 0xc0(I:1,V:1), Range: 4000, SID-Label: 60000
+      SPRING Algorithm - Algo: 0
+      SPRING Algorithm - Algo: 1
+      IPv6 TE Router Id: 2001:db8:c0a8:ff::5
+    IS neighbor: cRPD-spine01.00, Internal, Metric: default 10
+    IS neighbor: cRPD-spine02.00, Internal, Metric: default 10
+    Extended IS Reachability TLV, Type: 22, Length: 166
+    IS extended neighbor: cRPD-spine01.00, Metric: default 10 SubTLV len: 72
+      IP address: 10.0.41.3
+      IPv6 address: 2001:db8:a0:29::3
+      Neighbor's IP address: 10.0.41.2
+      Neighbor's IPv6 address: 2001:db8:a0:29::2
+      Local interface index: 57, Remote interface index: 55
+      P2P IPV6 Adj-SID - Flags:0xb0(F:1,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 17
+      P2P IPv6 Adj-SID:      17, Weight:   0, Flags: F-VL--
+      P2P IPV4 Adj-SID - Flags:0x30(F:0,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 16
+      P2P IPv4 Adj-SID:      16, Weight:   0, Flags: --VL--
+    IS extended neighbor: cRPD-spine02.00, Metric: default 10 SubTLV len: 72
+      IP address: 10.0.42.2
+      IPv6 address: 2001:db8:a0:2a::2
+      Neighbor's IP address: 10.0.42.3
+      Neighbor's IPv6 address: 2001:db8:a0:2a::3
+      Local interface index: 61, Remote interface index: 63
+      P2P IPV6 Adj-SID - Flags:0xb0(F:1,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 19
+      P2P IPv6 Adj-SID:      19, Weight:   0, Flags: F-VL--
+      P2P IPV4 Adj-SID - Flags:0x30(F:0,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 18
+      P2P IPv4 Adj-SID:      18, Weight:   0, Flags: --VL--
+  No queued transmissions
+
+cRPD-spine01.00-00 Sequence: 0xa, Checksum: 0xd80a, Lifetime: 954 secs
+  IPV4 Index: 2401, IPV6 Index: 2601
+  Node Segment Blocks Advertised:
+    Start Index : 0, Size : 4000, Label-Range: [ 60000, 63999 ]
+   IS neighbor: cRPD-leaf01.00                Metric:       10
+     Two-way fragment: cRPD-leaf01.00-00, Two-way first fragment: cRPD-leaf01.00-00
+     P2P IPv4 Adj-SID:      22, Weight:   0, Flags: --VL--
+     P2P IPv6 Adj-SID:      23, Weight:   0, Flags: F-VL--
+   IS neighbor: cRPD-leaf02.00                Metric:       10
+     Two-way fragment: cRPD-leaf02.00-00, Two-way first fragment: cRPD-leaf02.00-00
+     P2P IPv4 Adj-SID:      20, Weight:   0, Flags: --VL--
+     P2P IPv6 Adj-SID:      21, Weight:   0, Flags: F-VL--
+   IS neighbor: cRPD-leaf03.00                Metric:       10
+     Two-way fragment: cRPD-leaf03.00-00, Two-way first fragment: cRPD-leaf03.00-00
+     P2P IPv4 Adj-SID:      16, Weight:   0, Flags: --VL--
+     P2P IPv6 Adj-SID:      17, Weight:   0, Flags: F-VL--
+   IS neighbor: cRPD-leaf04.00                Metric:       10
+     Two-way fragment: cRPD-leaf04.00-00, Two-way first fragment: cRPD-leaf04.00-00
+     P2P IPv4 Adj-SID:      18, Weight:   0, Flags: --VL--
+     P2P IPv6 Adj-SID:      19, Weight:   0, Flags: F-VL--
+   IP prefix: 10.0.11.0/29                    Metric:       10 Internal Up
+   IP prefix: 10.0.21.0/29                    Metric:       10 Internal Up
+   IP prefix: 10.0.31.0/29                    Metric:       10 Internal Up
+   IP prefix: 10.0.41.0/29                    Metric:       10 Internal Up
+   IP prefix: 172.30.60.5/32                  Metric:        0 Internal Up
+   IP prefix: 192.168.255.0/24                Metric:       10 Internal Up
+   V6 prefix: ::/96                           Metric:       10 Internal Up
+   V6 prefix: 2001:db8:a0:b::/64              Metric:       10 Internal Up
+   V6 prefix: 2001:db8:a0:15::/64             Metric:       10 Internal Up
+   V6 prefix: 2001:db8:a0:1f::/64             Metric:       10 Internal Up
+   V6 prefix: 2001:db8:a0:29::/64             Metric:       10 Internal Up
+   V6 prefix: 2001:db8:ac1e:3c::5/128         Metric:        0 Internal Up
+   V6 prefix: 2001:db8:c0a8:ff::/64           Metric:       10 Internal Up
+
+  Header: LSP ID: cRPD-spine01.00-00, Length: 767 bytes
+    Allocated length: 767 bytes, Router ID: 172.30.60.5
+    Remaining lifetime: 954 secs, Level: 2, Interface: 41
+    Estimated free bytes: 0, Actual free bytes: 0
+    Aging timer expires in: 954 secs
+    Protocols: IP, IPv6
+
+  Packet: LSP ID: cRPD-spine01.00-00, Length: 767 bytes, Lifetime : 1180 secs
+    Checksum: 0xd80a, Sequence: 0xa, Attributes: 0x3 <L1 L2>
+    NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
+    Packet type: 20, Packet version: 1, Max area: 0
+
+  TLVs:
+    Area address: 49.1234 (3)
+    LSP Buffer Size: 1492
+    Speaks: IP
+    Speaks: IPV6
+    IP router id: 172.30.60.5
+    IP address: 172.30.60.5
+    IPv6 TE Router ID: 2001:db8:ac1e:3c::5
+    Hostname: cRPD-spine01
+    IP prefix: 192.168.255.0/24, Internal, Metric: default 10, Up
+    IP prefix: 172.30.60.5/32, Internal, Metric: default 0, Up
+    IP prefix: 10.0.11.0/29, Internal, Metric: default 10, Up
+    IP prefix: 10.0.21.0/29, Internal, Metric: default 10, Up
+    IP prefix: 10.0.31.0/29, Internal, Metric: default 10, Up
+    IP prefix: 10.0.41.0/29, Internal, Metric: default 10, Up
+    IP extended prefix: 192.168.255.0/24 metric 10 up
+    IP extended prefix: 172.30.60.5/32 metric 0 up
+      8 bytes of subtlvs
+      Node SID, Flags: 0x40(R:0,N:1,P:0,E:0,V:0,L:0), Algo: SPF(0), Value: 2401
+    IP extended prefix: 10.0.11.0/29 metric 10 up
+    IP extended prefix: 10.0.21.0/29 metric 10 up
+    IP extended prefix: 10.0.31.0/29 metric 10 up
+    IP extended prefix: 10.0.41.0/29 metric 10 up
+    IPv6 prefix: 2001:db8:c0a8:ff::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:ac1e:3c::5/128 Metric 0 Up
+      8 bytes of subtlvs
+      Node SID, Flags: 0x40(R:0,N:1,P:0,E:0,V:0,L:0), Algo: SPF(0), Value: 2601
+    IPv6 prefix: ::/96 Metric 10 Up
+    IPv6 prefix: 2001:db8:a0:b::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:a0:15::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:a0:1f::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:a0:29::/64 Metric 10 Up
+    Router Capability:  Router ID 172.30.60.5, Flags: 0x00
+      SPRING Capability - Flags: 0xc0(I:1,V:1), Range: 4000, SID-Label: 60000
+      SPRING Algorithm - Algo: 0
+      SPRING Algorithm - Algo: 1
+      IPv6 TE Router Id: 2001:db8:ac1e:3c::5
+    IS neighbor: cRPD-leaf03.00, Internal, Metric: default 10
+    IS neighbor: cRPD-leaf04.00, Internal, Metric: default 10
+    IS neighbor: cRPD-leaf02.00, Internal, Metric: default 10
+    IS neighbor: cRPD-leaf01.00, Internal, Metric: default 10
+    Extended IS Reachability TLV, Type: 22, Length: 249
+    IS extended neighbor: cRPD-leaf03.00, Metric: default 10 SubTLV len: 72
+      IP address: 10.0.31.3
+      IPv6 address: 2001:db8:a0:1f::3
+      Neighbor's IP address: 10.0.31.2
+      Neighbor's IPv6 address: 2001:db8:a0:1f::2
+      Local interface index: 51, Remote interface index: 49
+      P2P IPV6 Adj-SID - Flags:0xb0(F:1,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 17
+      P2P IPv6 Adj-SID:      17, Weight:   0, Flags: F-VL--
+      P2P IPV4 Adj-SID - Flags:0x30(F:0,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 16
+      P2P IPv4 Adj-SID:      16, Weight:   0, Flags: --VL--
+    IS extended neighbor: cRPD-leaf04.00, Metric: default 10 SubTLV len: 72
+      IP address: 10.0.41.2
+      IPv6 address: 2001:db8:a0:29::2
+      Neighbor's IP address: 10.0.41.3
+      Neighbor's IPv6 address: 2001:db8:a0:29::3
+      Local interface index: 55, Remote interface index: 57
+      P2P IPV6 Adj-SID - Flags:0xb0(F:1,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 19
+      P2P IPv6 Adj-SID:      19, Weight:   0, Flags: F-VL--
+      P2P IPV4 Adj-SID - Flags:0x30(F:0,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 18
+      P2P IPv4 Adj-SID:      18, Weight:   0, Flags: --VL--
+    IS extended neighbor: cRPD-leaf02.00, Metric: default 10 SubTLV len: 72
+      IP address: 10.0.21.3
+      IPv6 address: 2001:db8:a0:15::3
+      Neighbor's IP address: 10.0.21.2
+      Neighbor's IPv6 address: 2001:db8:a0:15::2
+      Local interface index: 43, Remote interface index: 41
+      P2P IPV6 Adj-SID - Flags:0xb0(F:1,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 21
+      P2P IPv6 Adj-SID:      21, Weight:   0, Flags: F-VL--
+      P2P IPV4 Adj-SID - Flags:0x30(F:0,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 20
+      P2P IPv4 Adj-SID:      20, Weight:   0, Flags: --VL--
+    Extended IS Reachability TLV, Type: 22, Length: 83
+    IS extended neighbor: cRPD-leaf01.00, Metric: default 10 SubTLV len: 72
+      IP address: 10.0.11.3
+      IPv6 address: 2001:db8:a0:b::3
+      Neighbor's IP address: 10.0.11.2
+      Neighbor's IPv6 address: 2001:db8:a0:b::2
+      Local interface index: 35, Remote interface index: 33
+      P2P IPV6 Adj-SID - Flags:0xb0(F:1,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 23
+      P2P IPv6 Adj-SID:      23, Weight:   0, Flags: F-VL--
+      P2P IPV4 Adj-SID - Flags:0x30(F:0,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 22
+      P2P IPv4 Adj-SID:      22, Weight:   0, Flags: --VL--
+  No queued transmissions
+
+cRPD-spine02.00-00 Sequence: 0xb, Checksum: 0x276a, Lifetime: 960 secs
+  IPV4 Index: 2402, IPV6 Index: 2602
+  Node Segment Blocks Advertised:
+    Start Index : 0, Size : 4000, Label-Range: [ 60000, 63999 ]
+   IS neighbor: cRPD-leaf01.00                Metric:       10
+     Two-way fragment: cRPD-leaf01.00-00, Two-way first fragment: cRPD-leaf01.00-00
+     P2P IPv4 Adj-SID:      18, Weight:   0, Flags: --VL--
+     P2P IPv6 Adj-SID:      19, Weight:   0, Flags: F-VL--
+   IS neighbor: cRPD-leaf02.00                Metric:       10
+     Two-way fragment: cRPD-leaf02.00-00, Two-way first fragment: cRPD-leaf02.00-00
+     P2P IPv4 Adj-SID:      22, Weight:   0, Flags: --VL--
+     P2P IPv6 Adj-SID:      23, Weight:   0, Flags: F-VL--
+   IS neighbor: cRPD-leaf03.00                Metric:       10
+     Two-way fragment: cRPD-leaf03.00-00, Two-way first fragment: cRPD-leaf03.00-00
+     P2P IPv4 Adj-SID:      16, Weight:   0, Flags: --VL--
+     P2P IPv6 Adj-SID:      17, Weight:   0, Flags: F-VL--
+   IS neighbor: cRPD-leaf04.00                Metric:       10
+     Two-way fragment: cRPD-leaf04.00-00, Two-way first fragment: cRPD-leaf04.00-00
+     P2P IPv4 Adj-SID:      20, Weight:   0, Flags: --VL--
+     P2P IPv6 Adj-SID:      21, Weight:   0, Flags: F-VL--
+   IP prefix: 10.0.12.0/29                    Metric:       10 Internal Up
+   IP prefix: 10.0.22.0/29                    Metric:       10 Internal Up
+   IP prefix: 10.0.32.0/29                    Metric:       10 Internal Up
+   IP prefix: 10.0.42.0/29                    Metric:       10 Internal Up
+   IP prefix: 172.30.60.6/32                  Metric:        0 Internal Up
+   IP prefix: 192.168.255.0/24                Metric:       10 Internal Up
+   V6 prefix: ::/96                           Metric:       10 Internal Up
+   V6 prefix: 2001:db8:a0:c::/64              Metric:       10 Internal Up
+   V6 prefix: 2001:db8:a0:16::/64             Metric:       10 Internal Up
+   V6 prefix: 2001:db8:a0:20::/64             Metric:       10 Internal Up
+   V6 prefix: 2001:db8:a0:2a::/64             Metric:       10 Internal Up
+   V6 prefix: 2001:db8:ac1e:3c::6/128         Metric:        0 Internal Up
+   V6 prefix: 2001:db8:c0a8:ff::/64           Metric:       10 Internal Up
+
+  Header: LSP ID: cRPD-spine02.00-00, Length: 767 bytes
+    Allocated length: 767 bytes, Router ID: 172.30.60.6
+    Remaining lifetime: 960 secs, Level: 2, Interface: 45
+    Estimated free bytes: 0, Actual free bytes: 0
+    Aging timer expires in: 960 secs
+    Protocols: IP, IPv6
+
+  Packet: LSP ID: cRPD-spine02.00-00, Length: 767 bytes, Lifetime : 1196 secs
+    Checksum: 0x276a, Sequence: 0xb, Attributes: 0x3 <L1 L2>
+    NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
+    Packet type: 20, Packet version: 1, Max area: 0
+
+  TLVs:
+    Area address: 49.1234 (3)
+    LSP Buffer Size: 1492
+    Speaks: IP
+    Speaks: IPV6
+    IP router id: 172.30.60.6
+    IP address: 172.30.60.6
+    IPv6 TE Router ID: 2001:db8:ac1e:3c::6
+    Hostname: cRPD-spine02
+    IP prefix: 192.168.255.0/24, Internal, Metric: default 10, Up
+    IP prefix: 172.30.60.6/32, Internal, Metric: default 0, Up
+    IP prefix: 10.0.12.0/29, Internal, Metric: default 10, Up
+    IP prefix: 10.0.22.0/29, Internal, Metric: default 10, Up
+    IP prefix: 10.0.32.0/29, Internal, Metric: default 10, Up
+    IP prefix: 10.0.42.0/29, Internal, Metric: default 10, Up
+    IP extended prefix: 192.168.255.0/24 metric 10 up
+    IP extended prefix: 172.30.60.6/32 metric 0 up
+      8 bytes of subtlvs
+      Node SID, Flags: 0x40(R:0,N:1,P:0,E:0,V:0,L:0), Algo: SPF(0), Value: 2402
+    IP extended prefix: 10.0.12.0/29 metric 10 up
+    IP extended prefix: 10.0.22.0/29 metric 10 up
+    IP extended prefix: 10.0.32.0/29 metric 10 up
+    IP extended prefix: 10.0.42.0/29 metric 10 up
+    IPv6 prefix: 2001:db8:c0a8:ff::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:ac1e:3c::6/128 Metric 0 Up
+      8 bytes of subtlvs
+      Node SID, Flags: 0x40(R:0,N:1,P:0,E:0,V:0,L:0), Algo: SPF(0), Value: 2602
+    IPv6 prefix: ::/96 Metric 10 Up
+    IPv6 prefix: 2001:db8:a0:c::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:a0:16::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:a0:20::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:a0:2a::/64 Metric 10 Up
+    Router Capability:  Router ID 172.30.60.6, Flags: 0x00
+      SPRING Capability - Flags: 0xc0(I:1,V:1), Range: 4000, SID-Label: 60000
+      SPRING Algorithm - Algo: 0
+      SPRING Algorithm - Algo: 1
+      IPv6 TE Router Id: 2001:db8:ac1e:3c::6
+    IS neighbor: cRPD-leaf03.00, Internal, Metric: default 10
+    IS neighbor: cRPD-leaf01.00, Internal, Metric: default 10
+    IS neighbor: cRPD-leaf04.00, Internal, Metric: default 10
+    IS neighbor: cRPD-leaf02.00, Internal, Metric: default 10
+    Extended IS Reachability TLV, Type: 22, Length: 249
+    IS extended neighbor: cRPD-leaf03.00, Metric: default 10 SubTLV len: 72
+      IP address: 10.0.32.3
+      IPv6 address: 2001:db8:a0:20::3
+      Neighbor's IP address: 10.0.32.2
+      Neighbor's IPv6 address: 2001:db8:a0:20::2
+      Local interface index: 59, Remote interface index: 53
+      P2P IPV6 Adj-SID - Flags:0xb0(F:1,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 17
+      P2P IPv6 Adj-SID:      17, Weight:   0, Flags: F-VL--
+      P2P IPV4 Adj-SID - Flags:0x30(F:0,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 16
+      P2P IPv4 Adj-SID:      16, Weight:   0, Flags: --VL--
+    IS extended neighbor: cRPD-leaf01.00, Metric: default 10 SubTLV len: 72
+      IP address: 10.0.12.3
+      IPv6 address: 2001:db8:a0:c::3
+      Neighbor's IP address: 10.0.12.2
+      Neighbor's IPv6 address: 2001:db8:a0:c::2
+      Local interface index: 39, Remote interface index: 37
+      P2P IPV6 Adj-SID - Flags:0xb0(F:1,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 19
+      P2P IPv6 Adj-SID:      19, Weight:   0, Flags: F-VL--
+      P2P IPV4 Adj-SID - Flags:0x30(F:0,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 18
+      P2P IPv4 Adj-SID:      18, Weight:   0, Flags: --VL--
+    IS extended neighbor: cRPD-leaf04.00, Metric: default 10 SubTLV len: 72
+      IP address: 10.0.42.3
+      IPv6 address: 2001:db8:a0:2a::3
+      Neighbor's IP address: 10.0.42.2
+      Neighbor's IPv6 address: 2001:db8:a0:2a::2
+      Local interface index: 63, Remote interface index: 61
+      P2P IPV6 Adj-SID - Flags:0xb0(F:1,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 21
+      P2P IPv6 Adj-SID:      21, Weight:   0, Flags: F-VL--
+      P2P IPV4 Adj-SID - Flags:0x30(F:0,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 20
+      P2P IPv4 Adj-SID:      20, Weight:   0, Flags: --VL--
+    Extended IS Reachability TLV, Type: 22, Length: 83
+    IS extended neighbor: cRPD-leaf02.00, Metric: default 10 SubTLV len: 72
+      IP address: 10.0.22.3
+      IPv6 address: 2001:db8:a0:16::3
+      Neighbor's IP address: 10.0.22.2
+      Neighbor's IPv6 address: 2001:db8:a0:16::2
+      Local interface index: 47, Remote interface index: 45
+      P2P IPV6 Adj-SID - Flags:0xb0(F:1,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 23
+      P2P IPv6 Adj-SID:      23, Weight:   0, Flags: F-VL--
+      P2P IPV4 Adj-SID - Flags:0x30(F:0,B:0,V:1,L:1,S:0,P:0), Weight:0, Label: 22
+      P2P IPv4 Adj-SID:      22, Weight:   0, Flags: --VL--
+  No queued transmissions

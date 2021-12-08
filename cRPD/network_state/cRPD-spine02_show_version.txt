@@ -1,0 +1,6 @@
+
+
+Hostname: cRPD-spine02
+Model: cRPD
+Junos: 21.2R1.10
+cRPD package version : 21.2R1.10 built by builder on 2021-06-21 14:13:43 UTC

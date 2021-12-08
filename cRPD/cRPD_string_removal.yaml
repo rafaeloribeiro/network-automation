@@ -1,0 +1,38 @@
+---
+- name: Remove excessive double-quotes
+  hosts: cRPD
+  strategy: free
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Regex to remove starting square bracket
+      ansible.builtin.replace:
+        path: "{{ item }}"
+        regexp: '^\133'
+      with_fileglob: 'network_state/{{ inventory_hostname  }}*.txt'
+    - name: Regex to remove escaped double-quotes
+      ansible.builtin.replace:
+        path: "{{ item }}"
+        regexp: '\\"'
+        replace: '"'
+      with_fileglob: 'network_state/{{ inventory_hostname  }}*.txt'
+    - name: Regex to remove leading spaces and starting quotes
+      ansible.builtin.replace:
+        path: "{{ item }}"
+        regexp: "^    \""
+      with_fileglob: 'network_state/{{ inventory_hostname  }}*.txt'
+    - name: Regex to remove trailing quotes w/ commas
+      ansible.builtin.replace:
+        path: "{{ item }}"
+        regexp: "\",$"
+      with_fileglob: 'network_state/{{ inventory_hostname  }}*.txt'
+    - name: Regex to remove trailing quotes w/o commas
+      ansible.builtin.replace:
+        path: "{{ item }}"
+        regexp: "\"$"
+      with_fileglob: 'network_state/{{ inventory_hostname  }}*.txt'
+    - name: Regex to remove ending square bracket
+      ansible.builtin.replace:
+        path: "{{ item }}"
+        regexp: "^]$"
+      with_fileglob: 'network_state/{{ inventory_hostname  }}*.txt'

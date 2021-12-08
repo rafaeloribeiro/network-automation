@@ -1,0 +1,15 @@
+protocols {
+    mpls {
+                interface eth1;
+                interface eth2;
+            }
+    isis {
+        source-packet-routing {
+            srgb start-label 60000 index-range 4000;
+            node-segment {
+                ipv4-index 1404;
+                ipv6-index 1604;
+            }
+        }
+    }
+}

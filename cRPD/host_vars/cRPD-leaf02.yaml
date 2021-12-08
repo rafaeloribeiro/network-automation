@@ -1,0 +1,8 @@
+---
+srgb_start_label: "60000"
+srgb_idx_range: "4000"
+ipv4_nsid: "1402"
+ipv6_nsid: "1602"
+mpls_intf:
+  - "eth1"
+  - "eth2"

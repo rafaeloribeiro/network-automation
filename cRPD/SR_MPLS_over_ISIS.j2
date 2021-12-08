@@ -1,0 +1,16 @@
+protocols {
+    mpls {
+        {% for item in mpls_intf: %}
+        interface {{ item }};
+        {% endfor %}
+    }
+    isis {
+        source-packet-routing {
+            srgb start-label {{ srgb_start_label }} index-range {{ srgb_idx_range }};
+            node-segment {
+                ipv4-index {{ ipv4_nsid }};
+                ipv6-index {{ ipv6_nsid }};
+            }
+        }
+    }
+}

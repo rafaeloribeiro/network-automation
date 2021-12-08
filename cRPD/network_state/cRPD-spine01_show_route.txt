@@ -1,0 +1,280 @@
+
+
+
+inet.0: 20 destinations, 20 routes (20 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+10.0.11.0/29       *[Direct/0] 00:05:27
+                    >  via eth1
+10.0.11.3/32       *[Local/0] 00:05:27
+                       Local via eth1
+10.0.12.0/29       *[IS-IS/18] 00:04:16, metric 20
+                    >  to 10.0.11.2 via eth1
+10.0.21.0/29       *[Direct/0] 00:05:23
+                    >  via eth2
+10.0.21.3/32       *[Local/0] 00:05:23
+                       Local via eth2
+10.0.22.0/29       *[IS-IS/18] 00:04:16, metric 20
+                    >  to 10.0.21.2 via eth2
+10.0.31.0/29       *[Direct/0] 00:05:18
+                    >  via eth3
+10.0.31.3/32       *[Local/0] 00:05:18
+                       Local via eth3
+10.0.32.0/29       *[IS-IS/18] 00:05:05, metric 20
+                    >  to 10.0.31.2 via eth3
+10.0.41.0/29       *[Direct/0] 00:05:15
+                    >  via eth4
+10.0.41.2/32       *[Local/0] 00:05:15
+                       Local via eth4
+10.0.42.0/29       *[IS-IS/18] 00:04:42, metric 20
+                    >  to 10.0.41.3 via eth4
+172.30.60.1/32     *[IS-IS/18] 00:04:16, metric 10
+                    >  to 10.0.11.2 via eth1
+172.30.60.2/32     *[IS-IS/18] 00:04:16, metric 10
+                    >  to 10.0.21.2 via eth2
+172.30.60.3/32     *[IS-IS/18] 00:05:05, metric 10
+                    >  to 10.0.31.2 via eth3
+172.30.60.4/32     *[IS-IS/18] 00:04:42, metric 10
+                    >  to 10.0.41.3 via eth4
+172.30.60.5/32     *[Direct/0] 00:05:29
+                    >  via lo.0
+172.30.60.6/32     *[IS-IS/18] 00:04:06, metric 20
+                       to 10.0.11.2 via eth1
+                       to 10.0.21.2 via eth2
+                    >  to 10.0.31.2 via eth3
+                       to 10.0.41.3 via eth4
+192.168.255.0/24   *[Direct/0] 00:05:29
+                    >  via eth0
+192.168.255.6/32   *[Local/0] 00:05:29
+                       Local via eth0
+
+inet.3: 5 destinations, 5 routes (5 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+172.30.60.1/32     *[L-ISIS/14] 00:04:16, metric 10
+                    >  to 10.0.11.2 via eth1
+172.30.60.2/32     *[L-ISIS/14] 00:04:16, metric 10
+                    >  to 10.0.21.2 via eth2
+172.30.60.3/32     *[L-ISIS/14] 00:05:05, metric 10
+                    >  to 10.0.31.2 via eth3
+172.30.60.4/32     *[L-ISIS/14] 00:04:42, metric 10
+                    >  to 10.0.41.3 via eth4
+172.30.60.6/32     *[L-ISIS/14] 00:04:06, metric 20
+                       to 10.0.11.2 via eth1, Push 62402
+                       to 10.0.21.2 via eth2, Push 62402
+                    >  to 10.0.31.2 via eth3, Push 62402
+                       to 10.0.41.3 via eth4, Push 62402
+
+iso.0: 1 destinations, 1 routes (1 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+49.1234.5678.9012.3411/72                
+                   *[Direct/0] 00:05:29
+                    >  via lo.0
+
+mpls.0: 38 destinations, 38 routes (38 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+0                  *[MPLS/0] 00:05:29, metric 1
+                       Receive
+1                  *[MPLS/0] 00:05:29, metric 1
+                       Receive
+2                  *[MPLS/0] 00:05:29, metric 1
+                       Receive
+13                 *[MPLS/0] 00:05:29, metric 1
+                       Receive
+16                 *[L-ISIS/14] 00:05:08, metric 0
+                    >  to 10.0.31.2 via eth3, Pop      
+16(S=0)            *[L-ISIS/14] 00:05:08, metric 0
+                    >  to 10.0.31.2 via eth3, Pop      
+17                 *[L-ISIS/14] 00:05:08, metric 0
+                    >  to fe80::42:aff:fe00:1f02 via eth3, Pop      
+17(S=0)            *[L-ISIS/14] 00:05:08, metric 0
+                    >  to fe80::42:aff:fe00:1f02 via eth3, Pop      
+18                 *[L-ISIS/14] 00:04:42, metric 0
+                    >  to 10.0.41.3 via eth4, Pop      
+18(S=0)            *[L-ISIS/14] 00:04:42, metric 0
+                    >  to 10.0.41.3 via eth4, Pop      
+19                 *[L-ISIS/14] 00:04:42, metric 0
+                    >  to fe80::42:aff:fe00:2903 via eth4, Pop      
+19(S=0)            *[L-ISIS/14] 00:04:42, metric 0
+                    >  to fe80::42:aff:fe00:2903 via eth4, Pop      
+20                 *[L-ISIS/14] 00:04:16, metric 0
+                    >  to 10.0.21.2 via eth2, Pop      
+20(S=0)            *[L-ISIS/14] 00:04:16, metric 0
+                    >  to 10.0.21.2 via eth2, Pop      
+21                 *[L-ISIS/14] 00:04:16, metric 0
+                    >  to fe80::42:aff:fe00:1502 via eth2, Pop      
+21(S=0)            *[L-ISIS/14] 00:04:16, metric 0
+                    >  to fe80::42:aff:fe00:1502 via eth2, Pop      
+22                 *[L-ISIS/14] 00:04:16, metric 0
+                    >  to 10.0.11.2 via eth1, Pop      
+22(S=0)            *[L-ISIS/14] 00:04:16, metric 0
+                    >  to 10.0.11.2 via eth1, Pop      
+23                 *[L-ISIS/14] 00:04:16, metric 0
+                    >  to fe80::42:aff:fe00:b02 via eth1, Pop      
+23(S=0)            *[L-ISIS/14] 00:04:16, metric 0
+                    >  to fe80::42:aff:fe00:b02 via eth1, Pop      
+61401              *[L-ISIS/14] 00:04:16, metric 10
+                    >  to 10.0.11.2 via eth1, Pop      
+61401(S=0)         *[L-ISIS/14] 00:04:16, metric 10
+                    >  to 10.0.11.2 via eth1, Pop      
+61402              *[L-ISIS/14] 00:04:16, metric 10
+                    >  to 10.0.21.2 via eth2, Pop      
+61402(S=0)         *[L-ISIS/14] 00:04:16, metric 10
+                    >  to 10.0.21.2 via eth2, Pop      
+61403              *[L-ISIS/14] 00:05:05, metric 10
+                    >  to 10.0.31.2 via eth3, Pop      
+61403(S=0)         *[L-ISIS/14] 00:05:05, metric 10
+                    >  to 10.0.31.2 via eth3, Pop      
+61404              *[L-ISIS/14] 00:04:42, metric 10
+                    >  to 10.0.41.3 via eth4, Pop      
+61404(S=0)         *[L-ISIS/14] 00:04:42, metric 10
+                    >  to 10.0.41.3 via eth4, Pop      
+61601              *[L-ISIS/14] 00:04:16, metric 10
+                    >  to fe80::42:aff:fe00:b02 via eth1, Pop      
+61601(S=0)         *[L-ISIS/14] 00:04:16, metric 10
+                    >  to fe80::42:aff:fe00:b02 via eth1, Pop      
+61602              *[L-ISIS/14] 00:04:16, metric 10
+                    >  to fe80::42:aff:fe00:1502 via eth2, Pop      
+61602(S=0)         *[L-ISIS/14] 00:04:16, metric 10
+                    >  to fe80::42:aff:fe00:1502 via eth2, Pop      
+61603              *[L-ISIS/14] 00:05:05, metric 10
+                    >  to fe80::42:aff:fe00:1f02 via eth3, Pop      
+61603(S=0)         *[L-ISIS/14] 00:05:05, metric 10
+                    >  to fe80::42:aff:fe00:1f02 via eth3, Pop      
+61604              *[L-ISIS/14] 00:04:42, metric 10
+                    >  to fe80::42:aff:fe00:2903 via eth4, Pop      
+61604(S=0)         *[L-ISIS/14] 00:04:42, metric 10
+                    >  to fe80::42:aff:fe00:2903 via eth4, Pop      
+62402              *[L-ISIS/14] 00:04:06, metric 20
+                    >  to 10.0.11.2 via eth1, Swap 62402
+                       to 10.0.21.2 via eth2, Swap 62402
+                       to 10.0.31.2 via eth3, Swap 62402
+                       to 10.0.41.3 via eth4, Swap 62402
+62602              *[L-ISIS/14] 00:04:06, metric 20
+                       to fe80::42:aff:fe00:b02 via eth1, Swap 62602
+                    >  to fe80::42:aff:fe00:1502 via eth2, Swap 62602
+                       to fe80::42:aff:fe00:1f02 via eth3, Swap 62602
+                       to fe80::42:aff:fe00:2903 via eth4, Swap 62602
+
+inet6.0: 34 destinations, 36 routes (34 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+::/96              *[Direct/0] 00:05:29
+                    >  via sit0
+                    [Direct/0] 00:05:29
+                    >  via sit0
+                    [Direct/0] 00:05:29
+                    >  via sit0
+::127.0.0.1/128    *[Local/0] 00:05:29
+                       Local via sit0
+::172.30.60.5/128  *[Local/0] 00:05:29
+                       Local via sit0
+::192.168.255.6/128*[Local/0] 00:05:29
+                       Local via sit0
+2001:db8:a0:b::/64 *[Direct/0] 00:05:27
+                    >  via eth1
+2001:db8:a0:b::3/128
+                   *[Local/0] 00:05:27
+                       Local via eth1
+2001:db8:a0:c::/64 *[IS-IS/18] 00:04:16, metric 20
+                    >  to fe80::42:aff:fe00:b02 via eth1
+2001:db8:a0:15::/64*[Direct/0] 00:05:23
+                    >  via eth2
+2001:db8:a0:15::3/128
+                   *[Local/0] 00:05:23
+                       Local via eth2
+2001:db8:a0:16::/64*[IS-IS/18] 00:04:16, metric 20
+                    >  to fe80::42:aff:fe00:1502 via eth2
+2001:db8:a0:1f::/64*[Direct/0] 00:05:18
+                    >  via eth3
+2001:db8:a0:1f::3/128
+                   *[Local/0] 00:05:18
+                       Local via eth3
+2001:db8:a0:20::/64*[IS-IS/18] 00:05:05, metric 20
+                    >  to fe80::42:aff:fe00:1f02 via eth3
+2001:db8:a0:29::/64*[Direct/0] 00:05:15
+                    >  via eth4
+2001:db8:a0:29::2/128
+                   *[Local/0] 00:05:15
+                       Local via eth4
+2001:db8:a0:2a::/64*[IS-IS/18] 00:04:42, metric 20
+                    >  to fe80::42:aff:fe00:2903 via eth4
+2001:db8:ac1e:3c::1/128
+                   *[IS-IS/18] 00:04:16, metric 10
+                    >  to fe80::42:aff:fe00:b02 via eth1
+2001:db8:ac1e:3c::2/128
+                   *[IS-IS/18] 00:04:16, metric 10
+                    >  to fe80::42:aff:fe00:1502 via eth2
+2001:db8:ac1e:3c::3/128
+                   *[IS-IS/18] 00:05:05, metric 10
+                    >  to fe80::42:aff:fe00:1f02 via eth3
+2001:db8:ac1e:3c::4/128
+                   *[IS-IS/18] 00:04:42, metric 10
+                    >  to fe80::42:aff:fe00:2903 via eth4
+2001:db8:ac1e:3c::5/128
+                   *[Direct/0] 00:05:29
+                    >  via lo.0
+2001:db8:ac1e:3c::6/128
+                   *[IS-IS/18] 00:04:06, metric 20
+                       to fe80::42:aff:fe00:b02 via eth1
+                       to fe80::42:aff:fe00:1502 via eth2
+                       to fe80::42:aff:fe00:1f02 via eth3
+                    >  to fe80::42:aff:fe00:2903 via eth4
+2001:db8:c0a8:ff::/64
+                   *[Direct/0] 00:05:29
+                    >  via eth0
+2001:db8:c0a8:ff::6/128
+                   *[Local/0] 00:05:29
+                       Local via eth0
+fe80::1/128        *[Direct/0] 00:05:29
+                    >  via lo.0
+fe80::42:aff:fe00:b03/128
+                   *[Local/0] 00:05:26
+                       Local via eth1
+fe80::42:aff:fe00:1503/128
+                   *[Local/0] 00:05:21
+                       Local via eth2
+fe80::42:aff:fe00:1f03/128
+                   *[Local/0] 00:05:16
+                       Local via eth3
+fe80::42:aff:fe00:2902/128
+                   *[Local/0] 00:05:14
+                       Local via eth4
+fe80::42:c0ff:fea8:ff06/128
+                   *[Local/0] 00:05:29
+                       Local via eth0
+fe80::3462:f5ff:fed4:bd5e/128
+                   *[Local/0] 00:05:29
+                       Local via ip6tnl0
+fe80::6444:a3ff:fe21:205b/128
+                   *[Local/0] 00:05:29
+                       Local via lsi
+fe80::fcfe:15ff:fe90:7155/128
+                   *[Local/0] 00:05:27
+                       Local via irb
+ff02::2/128        *[INET6/0] 00:05:29
+                       MultiRecv
+
+inet6.3: 5 destinations, 5 routes (5 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+2001:db8:ac1e:3c::1/128
+                   *[L-ISIS/14] 00:04:16, metric 10
+                    >  to fe80::42:aff:fe00:b02 via eth1
+2001:db8:ac1e:3c::2/128
+                   *[L-ISIS/14] 00:04:16, metric 10
+                    >  to fe80::42:aff:fe00:1502 via eth2
+2001:db8:ac1e:3c::3/128
+                   *[L-ISIS/14] 00:05:05, metric 10
+                    >  to fe80::42:aff:fe00:1f02 via eth3
+2001:db8:ac1e:3c::4/128
+                   *[L-ISIS/14] 00:04:42, metric 10
+                    >  to fe80::42:aff:fe00:2903 via eth4
+2001:db8:ac1e:3c::6/128
+                   *[L-ISIS/14] 00:04:06, metric 20
+                       to fe80::42:aff:fe00:b02 via eth1, Push 62602
+                       to fe80::42:aff:fe00:1502 via eth2, Push 62602
+                       to fe80::42:aff:fe00:1f02 via eth3, Push 62602
+                    >  to fe80::42:aff:fe00:2903 via eth4, Push 62602

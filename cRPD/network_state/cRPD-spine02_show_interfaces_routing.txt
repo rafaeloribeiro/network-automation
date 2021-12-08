@@ -1,0 +1,56 @@
+
+
+Interface        State Addresses
+eth4             Up    MPLS  enabled
+                       ISO   enabled
+                       INET  10.0.42.3
+                       INET6 2001:db8:a0:2a::3
+                       INET6 fe80::42:aff:fe00:2a03
+eth3             Up    MPLS  enabled
+                       ISO   enabled
+                       INET  10.0.32.3
+                       INET6 2001:db8:a0:20::3
+                       INET6 fe80::42:aff:fe00:2003
+eth2             Up    MPLS  enabled
+                       ISO   enabled
+                       INET  10.0.22.3
+                       INET6 2001:db8:a0:16::3
+                       INET6 fe80::42:aff:fe00:1603
+eth1             Up    MPLS  enabled
+                       ISO   enabled
+                       INET  10.0.12.3
+                       INET6 2001:db8:a0:c::3
+                       INET6 fe80::42:aff:fe00:c03
+irb              Up    MPLS  enabled
+                       ISO   enabled
+                       INET6 fe80::6459:c8ff:fe40:102
+tunl0            Up    MPLS  enabled
+                       ISO   enabled
+sit0             Up    MPLS  enabled
+                       ISO   enabled
+                       INET6 ::192.168.255.7
+                       INET6 ::172.30.60.6
+                       INET6 ::127.0.0.1
+lsi              Up    MPLS  enabled
+                       ISO   enabled
+                       INET6 fe80::2420:f2ff:fe9f:64d8
+lo.0             Up    MPLS  enabled
+                       ISO   enabled
+                       INET  172.30.60.6
+                       INET6 2001:db8:ac1e:3c::6
+                       INET6 fe80::1
+                       ISO   49.1234.5678.9012.3412
+ip6tnl0          Up    MPLS  enabled
+                       ISO   enabled
+                       INET6 fe80::984b:d1ff:fe2d:2e00
+gretap0          Down  MPLS  enabled
+                       ISO   enabled
+gre0             Up    MPLS  enabled
+                       ISO   enabled
+eth0             Up    MPLS  enabled
+                       ISO   enabled
+                       INET  192.168.255.7
+                       INET6 2001:db8:c0a8:ff::7
+                       INET6 fe80::42:c0ff:fea8:ff07
+erspan0          Down  MPLS  enabled
+                       ISO   enabled

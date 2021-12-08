@@ -1,0 +1,17 @@
+[cRPD]
+cRPD-leaf01  ansible_host="2001:db8:c0a8:ff::2"
+cRPD-leaf02  ansible_host="2001:db8:c0a8:ff::3"
+cRPD-leaf03  ansible_host="2001:db8:c0a8:ff::4"
+cRPD-leaf04  ansible_host="2001:db8:c0a8:ff::5"
+cRPD-spine01 ansible_host="2001:db8:c0a8:ff::6"
+cRPD-spine02 ansible_host="2001:db8:c0a8:ff::7"
+
+[cRPD:vars]
+ansible_user="root"
+ansible_port="830"
+ansible_ssh_pass="Juniper123"
+ansible_network_os="junos"
+#ansible_connection=network_cli
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3

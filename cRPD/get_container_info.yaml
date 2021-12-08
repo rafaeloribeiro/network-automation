@@ -1,0 +1,24 @@
+---
+- name: Collecting info on docker containers
+  hosts: cRPD
+  strategy: free
+  gather_facts: false
+  become: true
+  tasks:
+  - name: Get infos on container
+    community.docker.docker_container_info:
+      name: 
+       - cRPD-leaf01
+       - cRPD-leaf02
+       - cRPD-leaf03
+       - cRPD-leaf04
+       - cRPD-spine01
+       - cRPD-spine02
+    register: result
+  - name: Does container exist?
+    debug:
+      msg: "The container {{ 'exists' if result.exists else 'does not exist' }}"
+  - name: Print information about container
+    debug:
+      var: result.container
+    when: result.exists

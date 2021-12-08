@@ -1,0 +1,71 @@
+
+
+version 20210613.182046_builder.r1194332;
+system {
+    root-authentication {
+        encrypted-password "$6$C60kf$SWmdgR/9EQKFpGUpXD.IGEpvby6d868rOKt9UGDZP8D2q16bbGSWZBCJ9KsQu.Xv8ZIR2Iu3gntAGtkaYehPL/"; ## SECRET-DATA
+    }
+    services {
+        ssh {
+            root-login allow;
+        }
+        netconf {
+            ssh {
+                port 830;
+            }
+        }
+    }
+    license {
+        keys {
+            ## SECRET-DATA ##
+        }
+    }
+}
+interfaces {
+    lo0 {
+        unit 0 {
+            family iso {
+                address 49.1234.5678.9012.3412.00;
+            }
+        }
+    }
+}
+protocols {
+    isis {
+        interface all {
+            level 1 disable;
+        }
+        interface eth0 {
+            passive;
+        }
+        interface eth1 {
+            point-to-point;
+        }
+        interface eth2 {
+            point-to-point;
+        }
+        interface eth3 {
+            point-to-point;
+        }
+        interface eth4 {
+            point-to-point;
+        }
+        interface lo0.0 {
+            passive;
+        }
+        source-packet-routing {
+            srgb start-label 60000 index-range 4000;
+            node-segment {
+                ipv4-index 2402;
+                ipv6-index 2602;
+            }
+        }
+        level 1 disable;
+    }
+    mpls {
+        interface eth1;
+        interface eth2;
+        interface eth3;
+        interface eth4;
+    }
+}

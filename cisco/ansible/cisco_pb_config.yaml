@@ -1,0 +1,28 @@
+---
+- name: Get current device configuration
+  hosts:
+    - nexus_nxos
+    - cisco_ios
+  strategy: free
+  gather_facts: false
+  tasks:
+  - name: Get current configuration - classic ios devices
+    cisco.ios.ios_command:
+      commands: show running-config
+    when: '"cisco_ios" in group_names'
+    register: response_ios
+  - name: Writing device configuration to file - classic ios devices
+    copy:
+      content: "{{ response_ios.stdout | replace('\\n', '\n') }}"
+      dest: "{{ inventory_hostname }}_show_running_config.txt"
+    when: '"cisco_ios" in group_names'
+  - name: Get current configuration - NX-OS devices
+    cisco.nxos.nxos_command:
+      commands: show running-config
+    when: '"nexus_nxos" in group_names'
+    register: response_nxos
+  - name: Writing device configuration to file - NX-OS devices
+    copy:
+      content: "{{ response_nxos.stdout | replace('\\n', '\n') }}"
+      dest: "{{ inventory_hostname }}_show_running_config.txt"
+    when: '"nexus_nxos" in group_names'

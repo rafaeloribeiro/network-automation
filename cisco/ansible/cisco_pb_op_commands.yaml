@@ -1,0 +1,53 @@
+---
+- name: Get current device status
+  hosts:
+    - nexus_nxos
+    - cisco_ios
+  strategy: free
+  gather_facts: false
+
+  tasks:
+
+  - name: Get current status - classic ios devices
+    cisco.ios.ios_command:
+      commands:
+      - show inventory
+      - show interface description
+      - show ip interface brief
+      - show ipv6 interface brief
+      - show ip route
+      - show ipv6 route
+      - show ip ospf database
+      - show ipv6 ospf database
+      - show users
+      - show version
+    when: '"cisco_ios" in group_names'
+    register: response_ios
+
+  - name: Writing device status to file - classic ios devices
+    copy:
+      content: "{{ response_ios.stdout | to_nice_json | replace('\\n','\n') | replace('\\t','\t') }}"
+      dest: "{{ inventory_hostname }}_show_op_commands.txt"
+    when: '"cisco_ios" in group_names'
+
+  - name: Get current status - NX-OS devices
+    cisco.nxos.nxos_command:
+      commands: 
+      - show inventory
+      - show interface description
+      - show ip interface brief vrf all
+      - show ipv6 interface brief vrf all
+      - show ip route
+      - show ipv6 route
+      - show ip ospf database
+      - show ipv6 ospfv3 database
+      - show users
+      - show version
+    when: '"nexus_nxos" in group_names'
+    register: response_nxos
+
+  - name: Writing device status to file - NX-OS devices
+    copy:
+      content: "{{ response_nxos.stdout | to_nice_json | replace('\\n','\n') | replace('\\t','\t') }}"
+      dest: "{{ inventory_hostname }}_show_op_commands.txt"
+    when: '"nexus_nxos" in group_names'

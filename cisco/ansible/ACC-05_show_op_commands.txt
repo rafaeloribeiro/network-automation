@@ -1,0 +1,270 @@
+[
+    "NAME: \"3725 chassis\", DESCR: \"3725 chassis\"
+PID:                   , VID: 0.1, SN: FTX0945W0MY
+
+NAME: \"One port Fastethernet TX on Slot 1\", DESCR: \"One port Fastethernet TX\"
+PID: NM-1FE-TX=        , VID: 1.0, SN: 7720321    
+
+NAME: \"One port Fastethernet TX on Slot 2\", DESCR: \"One port Fastethernet TX\"
+PID: NM-1FE-TX=        , VID: 1.0, SN: 7720321",
+    "Interface                      Status         Protocol Description
+Fa0/0                          up             up       \"Conexao com NXOS-02 | Eth 1/5\"
+Fa0/1                          admin down     down     
+Fa1/0                          up             up       \"Servidor Linux\"
+Fa2/0                          up             up       \"Gerencia\"
+Lo0                            up             up       \"Loopback 0\"",
+    "Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            172.16.15.1     YES NVRAM  up                    up      
+FastEthernet0/1            unassigned      YES NVRAM  administratively down down    
+FastEthernet1/0            192.168.51.1    YES NVRAM  up                    up      
+FastEthernet2/0            192.168.250.104 YES DHCP   up                    up      
+Loopback0                  10.0.0.5        YES NVRAM  up                    up",
+    "FastEthernet0/0            [up/up]
+    FE80::C005:16FF:FE81:0
+    2001:DB8:172:1615::5
+FastEthernet0/1            [administratively down/down]
+FastEthernet1/0            [up/up]
+    FE80::C005:16FF:FE81:10
+    2001:DB8:1921:6851::1
+FastEthernet2/0            [up/up]
+Loopback0                  [up/up]
+    FE80::C005:16FF:FE81:0
+    2001:DB8:10::5",
+    "Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is 172.16.15.0 to network 0.0.0.0
+
+O IA 192.168.31.0/24 [110/77535] via 172.16.15.0, 1d05h, FastEthernet0/0
+O IA 192.168.61.0/24 [110/76535] via 172.16.15.0, 1d05h, FastEthernet0/0
+     172.16.0.0/31 is subnetted, 5 subnets
+O       172.16.16.0 [110/66535] via 172.16.15.0, 1d05h, FastEthernet0/0
+O       172.16.12.0 [110/66535] via 172.16.15.0, 1d05h, FastEthernet0/0
+O       172.16.13.0 [110/67535] via 172.16.15.0, 1d05h, FastEthernet0/0
+O       172.16.14.0 [110/67535] via 172.16.15.0, 1d05h, FastEthernet0/0
+C       172.16.15.0 is directly connected, FastEthernet0/0
+O IA 192.168.41.0/24 [110/77535] via 172.16.15.0, 1d05h, FastEthernet0/0
+C    192.168.250.0/24 is directly connected, FastEthernet2/0
+     10.0.0.0/8 is variably subnetted, 7 subnets, 2 masks
+O       10.0.0.2/32 [110/65536] via 172.16.15.0, 1d05h, FastEthernet0/0
+O       10.0.0.3/32 [110/67536] via 172.16.15.0, 1d05h, FastEthernet0/0
+O       10.0.0.1/32 [110/66536] via 172.16.15.0, 1d05h, FastEthernet0/0
+O       10.0.0.6/32 [110/66536] via 172.16.15.0, 1d05h, FastEthernet0/0
+O       10.0.0.4/32 [110/67536] via 172.16.15.0, 1d05h, FastEthernet0/0
+C       10.0.0.5/32 is directly connected, Loopback0
+S       10.100.0.0/16 [1/0] via 192.168.250.1
+C    192.168.51.0/24 is directly connected, FastEthernet1/0
+S*   0.0.0.0/0 [1/0] via 172.16.15.0",
+    "IPv6 Routing Table - 19 entries
+Codes: C - Connected, L - Local, S - Static, R - RIP, B - BGP
+       U - Per-user Static route, M - MIPv6
+       I1 - ISIS L1, I2 - ISIS L2, IA - ISIS interarea, IS - ISIS summary
+       O - OSPF intra, OI - OSPF inter, OE1 - OSPF ext 1, OE2 - OSPF ext 2
+       ON1 - OSPF NSSA ext 1, ON2 - OSPF NSSA ext 2
+       D - EIGRP, EX - EIGRP external
+S   ::/0 [1/0]
+     via 2001:DB8:172:1615::1
+O   2001:DB8:10::1/128 [110/66535]
+     via FE80::5202:FF:FE00:1B08, FastEthernet0/0
+O   2001:DB8:10::2/128 [110/65535]
+     via FE80::5202:FF:FE00:1B08, FastEthernet0/0
+O   2001:DB8:10::3/128 [110/67535]
+     via FE80::5202:FF:FE00:1B08, FastEthernet0/0
+O   2001:DB8:10::4/128 [110/67535]
+     via FE80::5202:FF:FE00:1B08, FastEthernet0/0
+LC  2001:DB8:10::5/128 [0/0]
+     via ::, Loopback0
+O   2001:DB8:10::6/128 [110/66535]
+     via FE80::5202:FF:FE00:1B08, FastEthernet0/0
+O   2001:DB8:172:1612::/64 [110/66535]
+     via FE80::5202:FF:FE00:1B08, FastEthernet0/0
+O   2001:DB8:172:1613::/64 [110/67535]
+     via FE80::5202:FF:FE00:1B08, FastEthernet0/0
+O   2001:DB8:172:1614::/64 [110/67535]
+     via FE80::5202:FF:FE00:1B08, FastEthernet0/0
+C   2001:DB8:172:1615::/64 [0/0]
+     via ::, FastEthernet0/0
+L   2001:DB8:172:1615::5/128 [0/0]
+     via ::, FastEthernet0/0
+O   2001:DB8:172:1616::/64 [110/66535]
+     via FE80::5202:FF:FE00:1B08, FastEthernet0/0
+OI  2001:DB8:1921:6831::/64 [110/77535]
+     via FE80::5202:FF:FE00:1B08, FastEthernet0/0
+OI  2001:DB8:1921:6841::/64 [110/77535]
+     via FE80::5202:FF:FE00:1B08, FastEthernet0/0
+C   2001:DB8:1921:6851::/64 [0/0]
+     via ::, FastEthernet1/0
+L   2001:DB8:1921:6851::1/128 [0/0]
+     via ::, FastEthernet1/0
+OI  2001:DB8:1921:6861::/64 [110/76535]
+     via FE80::5202:FF:FE00:1B08, FastEthernet0/0
+L   FF00::/8 [0/0]
+     via ::, Null0",
+    "OSPF Router with ID (10.0.0.5) (Process ID 1234)
+
+		Router Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+10.0.0.1        10.0.0.1        1763        0x80000045 0x0084A7 7
+10.0.0.2        10.0.0.2        1756        0x80000044 0x0056C7 7
+10.0.0.3        10.0.0.3        30          0x80000039 0x0059BB 3
+10.0.0.4        10.0.0.4        1285        0x8000003A 0x008B83 3
+10.0.0.5        10.0.0.5        936         0x80000038 0x00CD3D 3
+10.0.0.6        10.0.0.6        1106        0x80000038 0x000204 3
+
+		Summary Net Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+192.168.31.0    10.0.0.3        289         0x80000037 0x00A990
+192.168.41.0    10.0.0.4        306         0x80000037 0x0035F9
+192.168.51.0    10.0.0.5        163         0x80000037 0x00C063
+192.168.61.0    10.0.0.6        113         0x80000037 0x004CCC
+
+		Router Link States (Area 5)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+10.0.0.5        10.0.0.5        163         0x80000037 0x0064A5 1
+
+		Summary Net Link States (Area 5)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+10.0.0.1        10.0.0.5        936         0x80000035 0x0058A9
+10.0.0.2        10.0.0.5        936         0x80000035 0x001AD2
+10.0.0.3        10.0.0.5        936         0x80000035 0x00779C
+10.0.0.4        10.0.0.5        936         0x80000035 0x006DA5
+10.0.0.5        10.0.0.5        163         0x80000037 0x00F9ED
+10.0.0.6        10.0.0.5        936         0x80000035 0x0026D6
+172.16.12.0     10.0.0.5        936         0x80000035 0x00CA7B
+172.16.13.0     10.0.0.5        936         0x80000035 0x00F266
+172.16.14.0     10.0.0.5        936         0x80000035 0x00E770
+172.16.15.0     10.0.0.5        163         0x80000038 0x0071BA
+172.16.16.0     10.0.0.5        936         0x80000035 0x009EA3
+192.168.31.0    10.0.0.5        936         0x80000035 0x00075B
+192.168.41.0    10.0.0.5        936         0x80000035 0x0098BF
+192.168.61.0    10.0.0.5        936         0x80000035 0x0088A7
+
+		Summary ASB Link States (Area 5)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+10.0.0.5        10.0.0.5        936         0x80000035 0x00C742",
+    "OSPFv3 Router with ID (10.0.0.5) (Process ID 1234)
+
+		Router Link States (Area 0)
+
+ADV Router      Age         Seq#        Fragment ID  Link count  Bits
+10.0.0.1        1754        0x80000044  0            3           None
+10.0.0.2        1755        0x80000042  0            3           None
+10.0.0.3        81          0x80000039  0            1           B
+10.0.0.4        1460        0x8000003A  0            1           B
+10.0.0.5        677         0x80000038  0            1           B
+10.0.0.6        1389        0x80000038  0            1           B
+
+		Inter Area Prefix Link States (Area 0)
+
+ADV Router      Age         Seq#      	Prefix
+10.0.0.3        592         0x80000037  2001:DB8:1921:6831::/64
+10.0.0.4        1722        0x80000036  2001:DB8:1921:6841::/64
+10.0.0.5        1939        0x80000036  2001:DB8:1921:6851::/64
+10.0.0.6        608         0x80000037  2001:DB8:1921:6861::/64
+
+		Link (Type-8) Link States (Area 0)
+
+ADV Router      Age         Seq#        Link ID    Interface
+10.0.0.2        4           0x8000003F  10         Fa0/0
+10.0.0.5        1939        0x80000037  4          Fa0/0
+
+		Intra Area Prefix Link States (Area 0)
+
+ADV Router      Age         Seq#        Link ID    Ref-lstype  Ref-LSID
+10.0.0.1        1784        0x80000040  16777216   0x2001      0
+10.0.0.2        1765        0x8000003F  16777216   0x2001      0
+10.0.0.3        592         0x80000039  0          0x2001      0
+10.0.0.4        1722        0x80000038  0          0x2001      0
+10.0.0.5        1939        0x80000038  0          0x2001      0
+10.0.0.6        608         0x80000039  0          0x2001      0
+
+		Router Link States (Area 5)
+
+ADV Router      Age         Seq#        Fragment ID  Link count  Bits
+10.0.0.5        1939        0x80000037  0            0           B
+
+		Inter Area Prefix Link States (Area 5)
+
+ADV Router      Age         Seq#      	Prefix
+10.0.0.5        1939        0x80000037  2001:DB8:172:1615::/64
+10.0.0.5        1939        0x80000036  2001:DB8:10::5/128
+10.0.0.5        677         0x80000035  2001:DB8:10::2/128
+10.0.0.5        677         0x80000035  2001:DB8:172:1616::/64
+10.0.0.5        677         0x80000035  2001:DB8:10::6/128
+10.0.0.5        677         0x80000035  2001:DB8:1921:6861::/64
+10.0.0.5        677         0x80000035  2001:DB8:172:1612::/64
+10.0.0.5        677         0x80000035  2001:DB8:10::1/128
+10.0.0.5        677         0x80000035  2001:DB8:172:1614::/64
+10.0.0.5        677         0x80000035  2001:DB8:172:1613::/64
+10.0.0.5        677         0x80000035  2001:DB8:10::3/128
+10.0.0.5        677         0x80000035  2001:DB8:10::4/128
+10.0.0.5        677         0x80000035  2001:DB8:1921:6841::/64
+10.0.0.5        677         0x80000035  2001:DB8:1921:6831::/64
+
+		Inter Area Router Link States (Area 5)
+
+ADV Router      Age         Seq#        Link ID    Dest RtrID
+10.0.0.5        677         0x80000035  167772165  10.0.0.5
+
+		Link (Type-8) Link States (Area 5)
+
+ADV Router      Age         Seq#        Link ID    Interface
+10.0.0.5        1939        0x80000037  6          Fa1/0
+
+		Intra Area Prefix Link States (Area 5)
+
+ADV Router      Age         Seq#        Link ID    Ref-lstype  Ref-LSID
+10.0.0.5        1939        0x80000036  0          0x2001      0",
+    "Line       User       Host(s)              Idle       Location
+* 98 vty 0     admin      idle                 00:00:00 10.100.100.8
+
+  Interface    User               Mode         Idle     Peer Address",
+    "Cisco IOS Software, 3700 Software (C3725-ADVENTERPRISEK9-M), Version 12.4(15)T14, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2010 by Cisco Systems, Inc.
+Compiled Tue 17-Aug-10 12:08 by prod_rel_team
+
+ROM: ROMMON Emulation Microcode
+ROM: 3700 Software (C3725-ADVENTERPRISEK9-M), Version 12.4(15)T14, RELEASE SOFTWARE (fc2)
+
+ACC-05 uptime is 1 day, 6 hours, 12 minutes
+System returned to ROM by unknown reload cause - suspect boot_data[BOOT_COUNT] 0x0, BOOT_COUNT 0, BOOTDATA 19
+System image file is \"tftp://255.255.255.255/unknown\"
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Cisco 3725 (R7000) processor (revision 0.1) with 249856K/12288K bytes of memory.
+Processor board ID FTX0945W0MY
+R7000 CPU at 240MHz, Implementation 39, Rev 2.1, 256KB L2, 512KB L3 Cache
+4 FastEthernet interfaces
+DRAM configuration is 64 bits wide with parity enabled.
+55K bytes of NVRAM.
+131072K bytes of ATA System CompactFlash (Read/Write)
+131072K bytes of ATA Slot0 CompactFlash (Read/Write)
+
+Configuration register is 0x2102"
+]

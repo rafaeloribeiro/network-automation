@@ -1,0 +1,172 @@
+['Building configuration...
+
+Current configuration : 2495 bytes
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname ACC-06
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+memory-size iomem 5
+ip cef
+!
+!
+no ip dhcp use vrf connected
+!
+ip dhcp pool DHCP_SERVER
+   network 192.168.61.0 255.255.255.0
+   default-router 192.168.61.1 
+!
+!
+no ip domain lookup
+ip domain name routz.com.br
+ipv6 unicast-routing
+ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+username admin privilege 15 secret 5 $1$a4DJ$E9htYWU.GXL4WwThu8RHJ0
+archive
+ log config
+  hidekeys
+! 
+!
+!
+!
+ip ssh version 2
+!
+!
+!
+!
+interface Loopback0
+ description "Loopback 0"
+ ip address 10.0.0.6 255.255.255.255
+ ip ospf 1234 area 0
+ ipv6 address 2001:DB8:10::6/128
+ ipv6 enable
+ ipv6 ospf 1234 area 0
+!
+interface FastEthernet0/0
+ description "Conexao com NXOS-02 | Eth 1/6"
+ ip address 172.16.16.1 255.255.255.254
+ ip ospf network point-to-point
+ ip ospf 1234 area 0
+ speed auto
+ full-duplex
+ ipv6 address 2001:DB8:172:1616::6/64
+ ipv6 enable
+ ipv6 ospf network point-to-point
+ ipv6 ospf 1234 area 0
+!
+interface FastEthernet0/1
+ no ip address
+ shutdown
+ speed auto
+ full-duplex
+!
+interface FastEthernet1/0
+ description "Servidor Linux"
+ ip address 192.168.61.1 255.255.255.0
+ ip ospf 1234 area 6
+ duplex auto
+ speed auto
+ ipv6 address 2001:DB8:1921:6861::1/64
+ ipv6 enable
+ ipv6 ospf 1234 area 6
+!
+interface FastEthernet2/0
+ description "Gerencia"
+ ip address dhcp
+ speed auto
+ full-duplex
+!
+router ospf 1234
+ router-id 10.0.0.6
+ log-adjacency-changes
+ auto-cost reference-bandwidth 1000000
+ passive-interface FastEthernet1/0
+ passive-interface Loopback0
+ network 10.0.0.6 0.0.0.0 area 0
+ network 172.16.16.0 0.0.0.1 area 0
+ network 192.168.61.0 0.0.0.255 area 0
+!
+ip forward-protocol nd
+ip route 0.0.0.0 0.0.0.0 172.16.16.0
+ip route 10.100.0.0 255.255.0.0 192.168.250.1
+!
+!
+ip http server
+no ip http secure-server
+!
+no cdp run
+ipv6 route ::/0 2001:DB8:172:1616::1 unicast
+ipv6 router ospf 1234
+ router-id 10.0.0.6
+ ignore lsa mospf
+ log-adjacency-changes
+ auto-cost reference-bandwidth 1000000
+ passive-interface FastEthernet1/0
+ passive-interface Loopback0
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ privilege level 15
+ logging synchronous
+ login local
+line aux 0
+line vty 0 4
+ logging synchronous
+ login local
+ transport input ssh
+ transport output ssh
+line vty 5 903
+ logging synchronous
+ login local
+ transport input ssh
+ transport output ssh
+!
+!
+end']

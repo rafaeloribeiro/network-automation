@@ -1,0 +1,296 @@
+[
+    "NAME: \"Chassis\",  DESCR: \"Nexus9000 C9300v Chassis\"              
+PID: N9K-C9300v          ,  VID:     ,  SN: 9DVPDJSULFP          
+
+NAME: \"Slot 1\",  DESCR: \"Nexus 9000v 64 port Ethernet Module\"   
+PID: N9K-X9364v          ,  VID:     ,  SN: 9LY0QV12NNO          
+
+NAME: \"Slot 27\",  DESCR: \"Supervisor Module\"                     
+PID: N9K-vSUP            ,  VID:     ,  SN: 97UXRVJHHW2",
+    "-------------------------------------------------------------------------------
+Interface                Description                                            
+-------------------------------------------------------------------------------
+mgmt0                    Gerencia
+
+-------------------------------------------------------------------------------
+Port          Type   Speed   Description
+-------------------------------------------------------------------------------
+Eth1/1        eth    10G     \"Conexao com NXOS-02 | Eth 1/1\"
+Eth1/2        eth    10G     --
+Eth1/3        eth    10G     \"Conexao com ACC-03 | Fa 0/0\"
+Eth1/4        eth    10G     \"Conexao com ACC-04 | Fa 0/0\"
+Eth1/5        eth    10G     --
+Eth1/6        eth    10G     --
+Eth1/7        eth    10G     --
+Eth1/8        eth    10G     --
+Eth1/9        eth    10G     --
+Eth1/10       eth    10G     --
+Eth1/11       eth    10G     --
+Eth1/12       eth    10G     --
+Eth1/13       eth    10G     --
+Eth1/14       eth    10G     --
+Eth1/15       eth    10G     --
+Eth1/16       eth    10G     --
+Eth1/17       eth    10G     --
+Eth1/18       eth    10G     --
+Eth1/19       eth    10G     --
+Eth1/20       eth    10G     --
+Eth1/21       eth    10G     --
+Eth1/22       eth    10G     --
+Eth1/23       eth    10G     --
+Eth1/24       eth    10G     --
+Eth1/25       eth    10G     --
+Eth1/26       eth    10G     --
+Eth1/27       eth    10G     --
+Eth1/28       eth    10G     --
+Eth1/29       eth    10G     --
+Eth1/30       eth    10G     --
+Eth1/31       eth    10G     --
+Eth1/32       eth    10G     --
+Eth1/33       eth    10G     --
+Eth1/34       eth    10G     --
+Eth1/35       eth    10G     --
+Eth1/36       eth    10G     --
+Eth1/37       eth    10G     --
+Eth1/38       eth    10G     --
+Eth1/39       eth    10G     --
+Eth1/40       eth    10G     --
+Eth1/41       eth    10G     --
+Eth1/42       eth    10G     --
+Eth1/43       eth    10G     --
+Eth1/44       eth    10G     --
+Eth1/45       eth    10G     --
+Eth1/46       eth    10G     --
+Eth1/47       eth    10G     --
+Eth1/48       eth    10G     --
+Eth1/49       eth    10G     --
+Eth1/50       eth    10G     --
+Eth1/51       eth    10G     --
+Eth1/52       eth    10G     --
+Eth1/53       eth    10G     --
+Eth1/54       eth    10G     --
+Eth1/55       eth    10G     --
+Eth1/56       eth    10G     --
+Eth1/57       eth    10G     --
+Eth1/58       eth    10G     --
+Eth1/59       eth    10G     --
+Eth1/60       eth    10G     --
+Eth1/61       eth    10G     --
+Eth1/62       eth    10G     --
+Eth1/63       eth    10G     --
+Eth1/64       eth    10G     --
+
+-------------------------------------------------------------------------------
+Interface                Description                                            
+-------------------------------------------------------------------------------
+Lo0                      \"Loopback 0\"",
+    "IP Interface Status for VRF \"default\"(1)
+Interface            IP Address      Interface Status
+Lo0                  10.0.0.1        protocol-up/link-up/admin-up       
+Eth1/1               172.16.12.0     protocol-up/link-up/admin-up       
+Eth1/3               172.16.13.0     protocol-up/link-up/admin-up       
+Eth1/4               172.16.14.0     protocol-up/link-up/admin-up       
+
+IP Interface Status for VRF \"management\"(2)
+Interface            IP Address      Interface Status
+mgmt0                192.168.250.112 protocol-up/link-up/admin-up",
+    "IPv6 Interface Status for VRF \"default\"(1)
+Interface        IPv6 Address/Link-local Address           Interface Status 
+                                                           prot/link/admin
+Lo0              2001:db8:10::1                            up/up/up
+                 fe80::5208:ff:fe01:0                      
+Eth1/1           2001:db8:172:1612::1                      up/up/up
+                 fe80::5201:ff:fe00:1b08                   
+Eth1/3           2001:db8:172:1613::1                      up/up/up
+                 fe80::5201:ff:fe00:1b08                   
+Eth1/4           2001:db8:172:1614::1                      up/up/up
+                 fe80::5201:ff:fe00:1b08                   
+
+IPv6 Interface Status for VRF \"management\"(2)
+Interface        IPv6 Address/Link-local Address           Interface Status 
+                                                           prot/link/admin",
+    "IP Route Table for VRF \"default\"
+'*' denotes best ucast next-hop
+'**' denotes best mcast next-hop
+'[x/y]' denotes [preference/metric]
+'%<string>' in via output denotes VRF <string>
+
+10.0.0.1/32, ubest/mbest: 2/0, attached
+    *via 10.0.0.1, Lo0, [0/0], 1d06h, local
+    *via 10.0.0.1, Lo0, [0/0], 1d06h, direct
+10.0.0.2/32, ubest/mbest: 1/0
+    *via 172.16.12.1, Eth1/1, [110/1001], 1d05h, ospf-1234, intra
+10.0.0.3/32, ubest/mbest: 1/0
+    *via 172.16.13.1, Eth1/3, [110/1001], 1d06h, ospf-1234, intra
+10.0.0.4/32, ubest/mbest: 1/0
+    *via 172.16.14.1, Eth1/4, [110/1001], 1d05h, ospf-1234, intra
+10.0.0.5/32, ubest/mbest: 1/0
+    *via 172.16.12.1, Eth1/1, [110/2001], 1d05h, ospf-1234, intra
+10.0.0.6/32, ubest/mbest: 1/0
+    *via 172.16.12.1, Eth1/1, [110/2001], 1d05h, ospf-1234, intra
+172.16.12.0/31, ubest/mbest: 1/0, attached
+    *via 172.16.12.0, Eth1/1, [0/0], 1d05h, direct
+172.16.12.0/32, ubest/mbest: 1/0, attached
+    *via 172.16.12.0, Eth1/1, [0/0], 1d05h, local
+172.16.13.0/31, ubest/mbest: 1/0, attached
+    *via 172.16.13.0, Eth1/3, [0/0], 1d06h, direct
+172.16.13.0/32, ubest/mbest: 1/0, attached
+    *via 172.16.13.0, Eth1/3, [0/0], 1d06h, local
+172.16.14.0/31, ubest/mbest: 1/0, attached
+    *via 172.16.14.0, Eth1/4, [0/0], 1d06h, direct
+172.16.14.0/32, ubest/mbest: 1/0, attached
+    *via 172.16.14.0, Eth1/4, [0/0], 1d06h, local
+172.16.15.0/31, ubest/mbest: 1/0
+    *via 172.16.12.1, Eth1/1, [110/2000], 1d05h, ospf-1234, intra
+172.16.16.0/31, ubest/mbest: 1/0
+    *via 172.16.12.1, Eth1/1, [110/2000], 1d05h, ospf-1234, intra
+192.168.31.0/24, ubest/mbest: 1/0
+    *via 172.16.13.1, Eth1/3, [110/11000], 1d06h, ospf-1234, inter
+192.168.41.0/24, ubest/mbest: 1/0
+    *via 172.16.14.1, Eth1/4, [110/11000], 1d05h, ospf-1234, inter
+192.168.51.0/24, ubest/mbest: 1/0
+    *via 172.16.12.1, Eth1/1, [110/12000], 1d05h, ospf-1234, inter
+192.168.61.0/24, ubest/mbest: 1/0
+    *via 172.16.12.1, Eth1/1, [110/12000], 1d05h, ospf-1234, inter",
+    "IPv6 Routing Table for VRF \"default\"
+'*' denotes best ucast next-hop
+'**' denotes best mcast next-hop
+'[x/y]' denotes [preference/metric]
+
+2001:db8:10::1/128, ubest/mbest: 2/0, attached
+    *via 2001:db8:10::1, Lo0, [0/0], 1d06h, direct, 
+    *via 2001:db8:10::1, Lo0, [0/0], 1d06h, local
+2001:db8:10::2/128, ubest/mbest: 1/0
+    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/1000], 1d05h, ospfv3-1234, intra
+2001:db8:10::3/128, ubest/mbest: 1/0
+    *via fe80::c003:19ff:feac:0, Eth1/3, [110/1000], 1d06h, ospfv3-1234, intra
+2001:db8:10::4/128, ubest/mbest: 1/0
+    *via fe80::c004:18ff:fe13:0, Eth1/4, [110/1000], 1d05h, ospfv3-1234, intra
+2001:db8:10::5/128, ubest/mbest: 1/0
+    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/2000], 1d05h, ospfv3-1234, intra
+2001:db8:10::6/128, ubest/mbest: 1/0
+    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/2000], 1d05h, ospfv3-1234, intra
+2001:db8:172:1612::/64, ubest/mbest: 1/0, attached
+    *via 2001:db8:172:1612::1, Eth1/1, [0/0], 1d05h, direct, 
+2001:db8:172:1612::1/128, ubest/mbest: 1/0, attached
+    *via 2001:db8:172:1612::1, Eth1/1, [0/0], 1d05h, local
+2001:db8:172:1613::/64, ubest/mbest: 1/0, attached
+    *via 2001:db8:172:1613::1, Eth1/3, [0/0], 1d06h, direct, 
+2001:db8:172:1613::1/128, ubest/mbest: 1/0, attached
+    *via 2001:db8:172:1613::1, Eth1/3, [0/0], 1d06h, local
+2001:db8:172:1614::/64, ubest/mbest: 1/0, attached
+    *via 2001:db8:172:1614::1, Eth1/4, [0/0], 1d06h, direct, 
+2001:db8:172:1614::1/128, ubest/mbest: 1/0, attached
+    *via 2001:db8:172:1614::1, Eth1/4, [0/0], 1d06h, local
+2001:db8:172:1615::/64, ubest/mbest: 1/0
+    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/2000], 1d05h, ospfv3-1234, intra
+2001:db8:172:1616::/64, ubest/mbest: 1/0
+    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/2000], 1d05h, ospfv3-1234, intra
+2001:db8:1921:6831::/64, ubest/mbest: 1/0
+    *via fe80::c003:19ff:feac:0, Eth1/3, [110/11000], 1d06h, ospfv3-1234, inter
+2001:db8:1921:6841::/64, ubest/mbest: 1/0
+    *via fe80::c004:18ff:fe13:0, Eth1/4, [110/11000], 1d05h, ospfv3-1234, inter
+2001:db8:1921:6851::/64, ubest/mbest: 1/0
+    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/12000], 1d05h, ospfv3-1234, inter
+2001:db8:1921:6861::/64, ubest/mbest: 1/0
+    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/12000], 1d05h, ospfv3-1234, inter",
+    "OSPF Router with ID (10.0.0.1) (Process ID 1234 VRF default)
+
+                Router Link States (Area 0.0.0.0)
+
+Link ID         ADV Router      Age        Seq#       Checksum Link Count
+10.0.0.1        10.0.0.1        1762       0x80000045 0x84a7   7   
+10.0.0.2        10.0.0.2        1757       0x80000044 0x56c7   7   
+10.0.0.3        10.0.0.3        29         0x80000039 0x59bb   3   
+10.0.0.4        10.0.0.4        1284       0x8000003a 0x8b83   3   
+10.0.0.5        10.0.0.5        940        0x80000038 0xcd3d   3   
+10.0.0.6        10.0.0.6        1107       0x80000038 0x0204   3   
+
+                Summary Network Link States (Area 0.0.0.0)
+
+Link ID         ADV Router      Age        Seq#       Checksum 
+192.168.31.0    10.0.0.3        288        0x80000037 0xa990
+192.168.41.0    10.0.0.4        305        0x80000037 0x35f9
+192.168.51.0    10.0.0.5        167        0x80000037 0xc063
+192.168.61.0    10.0.0.6        115        0x80000037 0x4ccc",
+    "OSPFv3 Router with ID (10.0.0.1) (Process ID 1234 VRF default)
+
+                Router Link States (Area 0.0.0.0)
+
+Link ID         ADV Router      Age  Seq#       Link Count
+0.0.0.0         10.0.0.1        1753 0x80000044 3   
+0.0.0.0         10.0.0.2        1757 0x80000042 3   
+0.0.0.0         10.0.0.3        81   0x80000039 1   
+0.0.0.0         10.0.0.4        1459 0x8000003a 1   
+0.0.0.0         10.0.0.5        680  0x80000038 1   
+0.0.0.0         10.0.0.6        1391 0x80000038 1   
+
+                Inter-Area Prefix Link States (Area 0.0.0.0)
+
+Link ID         ADV Router      Age  Seq#       Prefix
+0.0.0.0         10.0.0.3        591  0x80000037 2001:db8:1921:6831::/64
+0.0.0.0         10.0.0.4        1722 0x80000036 2001:db8:1921:6841::/64
+0.0.0.0         10.0.0.5        1943 0x80000036 2001:db8:1921:6851::/64
+0.0.0.0         10.0.0.6        610  0x80000037 2001:db8:1921:6861::/64
+
+                Intra-Area Prefix Link States (Area 0.0.0.0)
+
+Link ID         ADV Router      Age  Seq#       Ref-lstype Ref-LSID
+1.0.0.0         10.0.0.1        1783 0x80000040 Router     0.0.0.0        
+1.0.0.0         10.0.0.2        1767 0x8000003f Router     0.0.0.0        
+0.0.0.0         10.0.0.3        591  0x80000039 Router     0.0.0.0        
+0.0.0.0         10.0.0.4        1722 0x80000038 Router     0.0.0.0        
+0.0.0.0         10.0.0.5        1943 0x80000038 Router     0.0.0.0        
+0.0.0.0         10.0.0.6        610  0x80000039 Router     0.0.0.0        
+
+                Link-Local Link States (Area 0.0.0.0)
+
+Link ID         ADV Router      Age  Seq#       Interface
+0.0.0.5         10.0.0.1        1053 0x8000003f Lo0
+0.0.0.9         10.0.0.1        273  0x80000042 Eth1/4
+0.0.0.3         10.0.0.4        1722 0x80000037 Eth1/4
+0.0.0.8         10.0.0.1        913  0x80000040 Eth1/3
+0.0.0.3         10.0.0.3        591  0x80000038 Eth1/3
+0.0.0.6         10.0.0.1        1753 0x8000003e Eth1/1
+0.0.0.6         10.0.0.2        1757 0x8000003e Eth1/1",
+    "NAME     LINE         TIME         IDLE          PID COMMENT
+admin    pts/3        Jul  6 17:44   .         10581 (10.100.100.8) session=ssh *",
+    "Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Documents: http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.html
+Copyright (c) 2002-2020, Cisco Systems, Inc. All rights reserved.
+The copyrights to certain works contained herein are owned by
+other third parties and are used and distributed under license.
+Some parts of this software are covered under the GNU Public
+License. A copy of the license is available at
+http://www.gnu.org/licenses/gpl.html.
+
+Nexus 9000v is a demo version of the Nexus Operating System
+
+Software
+  BIOS: version 
+ NXOS: version 9.3(6)
+  BIOS compile time:  
+  NXOS image file is: bootflash:///nxos.9.3.6.bin
+  NXOS compile time:  11/9/2020 23:00:00 [11/10/2020 11:00:21]
+
+
+Hardware
+  cisco Nexus9000 C9300v Chassis 
+   with 8158844 kB of memory.
+  Processor Board ID 97UXRVJHHW2
+
+  Device name: NXOS-01
+  bootflash:    4287040 kB
+Kernel uptime is 1 day(s), 6 hour(s), 11 minute(s), 45 second(s)
+
+Last reset 
+  Reason: Unknown
+  System version: 
+  Service: 
+
+plugin
+  Core Plugin, Ethernet Plugin
+
+Active Package(s):"
+]

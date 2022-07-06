@@ -19,7 +19,7 @@ feature lldp
 
 username admin password 5 $5$FKFGKM$OEC3uEg.Gp5hxSZngC/knP9gY2WwgpLnhk5yNtEdrE/  role network-admin
 no ip domain-lookup
-ip name-server 192.168.250.1 use-vrf management
+ip name-server 198.51.100.1 use-vrf management
 copp profile strict
 snmp-server user admin network-admin auth md5 0x8e53aac96fbaf3157050079767e9ae5d priv 0x8e53aac96fbaf3157050079767e9ae5d localizedkey
 rmon event 1 log trap public description FATAL(1) owner PMON@FATAL
@@ -28,11 +28,11 @@ rmon event 3 log trap public description ERROR(3) owner PMON@ERROR
 rmon event 4 log trap public description WARNING(4) owner PMON@WARNING
 rmon event 5 log trap public description INFORMATION(5) owner PMON@INFO
 
-ip route 10.100.0.0/16 192.168.250.1
+ip route 10.100.0.0/16 198.51.100.1
 vlan 1
 
 vrf context management
-  ip route 0.0.0.0/0 192.168.250.1
+  ip route 0.0.0.0/0 198.51.100.1
 system vrf-member-change retain-l3-config
 
 

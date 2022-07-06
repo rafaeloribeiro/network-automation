@@ -119,7 +119,7 @@ router ospf 1234
 !
 ip forward-protocol nd
 ip route 0.0.0.0 0.0.0.0 172.16.13.0
-ip route 10.100.0.0 255.255.0.0 192.168.250.1
+ip route 10.100.0.0 255.255.0.0 198.51.100.1
 !
 !
 ip http server

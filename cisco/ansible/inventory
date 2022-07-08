@@ -1,15 +1,15 @@
 [nexus_nxos]
-NXOS-01 ansible_host=192.0.2.1
-NXOS-02 ansible_host=192.0.2.2
+NXOS-01 ansible_host=192.168.250.112
+NXOS-02 ansible_host=192.168.250.113
 
 [nexus_nxos:vars]
 ansible_network_os=nxos
 
 [cisco_ios]
-ACC-03 ansible_host=192.0.2.3
-ACC-04 ansible_host=192.0.2.4
-ACC-05 ansible_host=192.0.2.5
-ACC-06 ansible_host=192.0.2.6
+ACC-03 ansible_host=192.168.250.115
+ACC-04 ansible_host=192.168.250.105
+ACC-05 ansible_host=192.168.250.114
+ACC-06 ansible_host=192.168.250.100
 
 [cisco_ios:vars]
 ansible_network_os=ios
@@ -19,3 +19,4 @@ ansible_ssh_user="admin"
 ansible_user="admin"
 ansible_ssh_pass="Admin123"
 ansible_connection=network_cli
+ansible_become_method=enable

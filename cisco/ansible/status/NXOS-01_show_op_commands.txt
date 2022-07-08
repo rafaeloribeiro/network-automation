@@ -116,145 +116,145 @@ Interface        IPv6 Address/Link-local Address           Interface Status
 '%<string>' in via output denotes VRF <string>
 
 10.0.0.1/32, ubest/mbest: 2/0, attached
-    *via 10.0.0.1, Lo0, [0/0], 1d06h, local
-    *via 10.0.0.1, Lo0, [0/0], 1d06h, direct
+    *via 10.0.0.1, Lo0, [0/0], 1d15h, local
+    *via 10.0.0.1, Lo0, [0/0], 1d15h, direct
 10.0.0.2/32, ubest/mbest: 1/0
-    *via 172.16.12.1, Eth1/1, [110/1001], 1d05h, ospf-1234, intra
+    *via 172.16.12.1, Eth1/1, [110/1001], 20:51:40, ospf-1234, intra
 10.0.0.3/32, ubest/mbest: 1/0
-    *via 172.16.13.1, Eth1/3, [110/1001], 1d06h, ospf-1234, intra
+    *via 172.16.13.1, Eth1/3, [110/1001], 20:51:46, ospf-1234, intra
 10.0.0.4/32, ubest/mbest: 1/0
-    *via 172.16.14.1, Eth1/4, [110/1001], 1d05h, ospf-1234, intra
+    *via 172.16.14.1, Eth1/4, [110/1001], 20:51:46, ospf-1234, intra
 10.0.0.5/32, ubest/mbest: 1/0
-    *via 172.16.12.1, Eth1/1, [110/2001], 1d05h, ospf-1234, intra
+    *via 172.16.12.1, Eth1/1, [110/2001], 20:51:40, ospf-1234, intra
 10.0.0.6/32, ubest/mbest: 1/0
-    *via 172.16.12.1, Eth1/1, [110/2001], 1d05h, ospf-1234, intra
+    *via 172.16.12.1, Eth1/1, [110/2001], 20:51:40, ospf-1234, intra
 172.16.12.0/31, ubest/mbest: 1/0, attached
-    *via 172.16.12.0, Eth1/1, [0/0], 1d05h, direct
+    *via 172.16.12.0, Eth1/1, [0/0], 1d15h, direct
 172.16.12.0/32, ubest/mbest: 1/0, attached
-    *via 172.16.12.0, Eth1/1, [0/0], 1d05h, local
+    *via 172.16.12.0, Eth1/1, [0/0], 1d15h, local
 172.16.13.0/31, ubest/mbest: 1/0, attached
-    *via 172.16.13.0, Eth1/3, [0/0], 1d06h, direct
+    *via 172.16.13.0, Eth1/3, [0/0], 1d15h, direct
 172.16.13.0/32, ubest/mbest: 1/0, attached
-    *via 172.16.13.0, Eth1/3, [0/0], 1d06h, local
+    *via 172.16.13.0, Eth1/3, [0/0], 1d15h, local
 172.16.14.0/31, ubest/mbest: 1/0, attached
-    *via 172.16.14.0, Eth1/4, [0/0], 1d06h, direct
+    *via 172.16.14.0, Eth1/4, [0/0], 1d15h, direct
 172.16.14.0/32, ubest/mbest: 1/0, attached
-    *via 172.16.14.0, Eth1/4, [0/0], 1d06h, local
+    *via 172.16.14.0, Eth1/4, [0/0], 1d15h, local
 172.16.15.0/31, ubest/mbest: 1/0
-    *via 172.16.12.1, Eth1/1, [110/2000], 1d05h, ospf-1234, intra
+    *via 172.16.12.1, Eth1/1, [110/2000], 20:51:40, ospf-1234, intra
 172.16.16.0/31, ubest/mbest: 1/0
-    *via 172.16.12.1, Eth1/1, [110/2000], 1d05h, ospf-1234, intra
+    *via 172.16.12.1, Eth1/1, [110/2000], 20:51:40, ospf-1234, intra
 192.168.31.0/24, ubest/mbest: 1/0
-    *via 172.16.13.1, Eth1/3, [110/11000], 1d06h, ospf-1234, inter
+    *via 172.16.13.1, Eth1/3, [110/11000], 20:51:46, ospf-1234, inter
 192.168.41.0/24, ubest/mbest: 1/0
-    *via 172.16.14.1, Eth1/4, [110/11000], 1d05h, ospf-1234, inter
+    *via 172.16.14.1, Eth1/4, [110/11000], 20:51:46, ospf-1234, inter
 192.168.51.0/24, ubest/mbest: 1/0
-    *via 172.16.12.1, Eth1/1, [110/12000], 1d05h, ospf-1234, inter
+    *via 172.16.12.1, Eth1/1, [110/12000], 20:51:40, ospf-1234, inter
 192.168.61.0/24, ubest/mbest: 1/0
-    *via 172.16.12.1, Eth1/1, [110/12000], 1d05h, ospf-1234, inter",
+    *via 172.16.12.1, Eth1/1, [110/12000], 20:51:40, ospf-1234, inter",
     "IPv6 Routing Table for VRF \"default\"
 '*' denotes best ucast next-hop
 '**' denotes best mcast next-hop
 '[x/y]' denotes [preference/metric]
 
 2001:db8:10::1/128, ubest/mbest: 2/0, attached
-    *via 2001:db8:10::1, Lo0, [0/0], 1d06h, direct, 
-    *via 2001:db8:10::1, Lo0, [0/0], 1d06h, local
+    *via 2001:db8:10::1, Lo0, [0/0], 1d15h, direct, 
+    *via 2001:db8:10::1, Lo0, [0/0], 1d15h, local
 2001:db8:10::2/128, ubest/mbest: 1/0
-    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/1000], 1d05h, ospfv3-1234, intra
+    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/1000], 1d15h, ospfv3-1234, intra
 2001:db8:10::3/128, ubest/mbest: 1/0
-    *via fe80::c003:19ff:feac:0, Eth1/3, [110/1000], 1d06h, ospfv3-1234, intra
+    *via fe80::c003:41ff:fe52:0, Eth1/3, [110/1000], 1d15h, ospfv3-1234, intra
 2001:db8:10::4/128, ubest/mbest: 1/0
-    *via fe80::c004:18ff:fe13:0, Eth1/4, [110/1000], 1d05h, ospfv3-1234, intra
+    *via fe80::c004:3fff:fe1d:0, Eth1/4, [110/1000], 1d15h, ospfv3-1234, intra
 2001:db8:10::5/128, ubest/mbest: 1/0
-    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/2000], 1d05h, ospfv3-1234, intra
+    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/2000], 1d15h, ospfv3-1234, intra
 2001:db8:10::6/128, ubest/mbest: 1/0
-    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/2000], 1d05h, ospfv3-1234, intra
+    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/2000], 1d15h, ospfv3-1234, intra
 2001:db8:172:1612::/64, ubest/mbest: 1/0, attached
-    *via 2001:db8:172:1612::1, Eth1/1, [0/0], 1d05h, direct, 
+    *via 2001:db8:172:1612::1, Eth1/1, [0/0], 1d15h, direct, 
 2001:db8:172:1612::1/128, ubest/mbest: 1/0, attached
-    *via 2001:db8:172:1612::1, Eth1/1, [0/0], 1d05h, local
+    *via 2001:db8:172:1612::1, Eth1/1, [0/0], 1d15h, local
 2001:db8:172:1613::/64, ubest/mbest: 1/0, attached
-    *via 2001:db8:172:1613::1, Eth1/3, [0/0], 1d06h, direct, 
+    *via 2001:db8:172:1613::1, Eth1/3, [0/0], 1d15h, direct, 
 2001:db8:172:1613::1/128, ubest/mbest: 1/0, attached
-    *via 2001:db8:172:1613::1, Eth1/3, [0/0], 1d06h, local
+    *via 2001:db8:172:1613::1, Eth1/3, [0/0], 1d15h, local
 2001:db8:172:1614::/64, ubest/mbest: 1/0, attached
-    *via 2001:db8:172:1614::1, Eth1/4, [0/0], 1d06h, direct, 
+    *via 2001:db8:172:1614::1, Eth1/4, [0/0], 1d15h, direct, 
 2001:db8:172:1614::1/128, ubest/mbest: 1/0, attached
-    *via 2001:db8:172:1614::1, Eth1/4, [0/0], 1d06h, local
+    *via 2001:db8:172:1614::1, Eth1/4, [0/0], 1d15h, local
 2001:db8:172:1615::/64, ubest/mbest: 1/0
-    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/2000], 1d05h, ospfv3-1234, intra
+    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/2000], 1d15h, ospfv3-1234, intra
 2001:db8:172:1616::/64, ubest/mbest: 1/0
-    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/2000], 1d05h, ospfv3-1234, intra
+    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/2000], 1d15h, ospfv3-1234, intra
 2001:db8:1921:6831::/64, ubest/mbest: 1/0
-    *via fe80::c003:19ff:feac:0, Eth1/3, [110/11000], 1d06h, ospfv3-1234, inter
+    *via fe80::c003:41ff:fe52:0, Eth1/3, [110/11000], 1d15h, ospfv3-1234, inter
 2001:db8:1921:6841::/64, ubest/mbest: 1/0
-    *via fe80::c004:18ff:fe13:0, Eth1/4, [110/11000], 1d05h, ospfv3-1234, inter
+    *via fe80::c004:3fff:fe1d:0, Eth1/4, [110/11000], 1d15h, ospfv3-1234, inter
 2001:db8:1921:6851::/64, ubest/mbest: 1/0
-    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/12000], 1d05h, ospfv3-1234, inter
+    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/12000], 1d15h, ospfv3-1234, inter
 2001:db8:1921:6861::/64, ubest/mbest: 1/0
-    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/12000], 1d05h, ospfv3-1234, inter",
+    *via fe80::5202:ff:fe00:1b08, Eth1/1, [110/12000], 1d15h, ospfv3-1234, inter",
     "OSPF Router with ID (10.0.0.1) (Process ID 1234 VRF default)
 
                 Router Link States (Area 0.0.0.0)
 
 Link ID         ADV Router      Age        Seq#       Checksum Link Count
-10.0.0.1        10.0.0.1        1762       0x80000045 0x84a7   7   
-10.0.0.2        10.0.0.2        1757       0x80000044 0x56c7   7   
-10.0.0.3        10.0.0.3        29         0x80000039 0x59bb   3   
-10.0.0.4        10.0.0.4        1284       0x8000003a 0x8b83   3   
-10.0.0.5        10.0.0.5        940        0x80000038 0xcd3d   3   
-10.0.0.6        10.0.0.6        1107       0x80000038 0x0204   3   
+10.0.0.1        10.0.0.1        464        0x80000058 0x5eba   7   
+10.0.0.2        10.0.0.2        458        0x80000059 0x2cdc   7   
+10.0.0.3        10.0.0.3        1455       0x80000049 0x39cb   3   
+10.0.0.4        10.0.0.4        1491       0x80000049 0x6d92   3   
+10.0.0.5        10.0.0.5        34         0x8000004a 0xa94f   3   
+10.0.0.6        10.0.0.6        1169       0x80000049 0xdf15   3   
 
                 Summary Network Link States (Area 0.0.0.0)
 
 Link ID         ADV Router      Age        Seq#       Checksum 
-192.168.31.0    10.0.0.3        288        0x80000037 0xa990
-192.168.41.0    10.0.0.4        305        0x80000037 0x35f9
-192.168.51.0    10.0.0.5        167        0x80000037 0xc063
-192.168.61.0    10.0.0.6        115        0x80000037 0x4ccc",
+192.168.31.0    10.0.0.3        1698       0x80000047 0x89a0
+192.168.41.0    10.0.0.4        1491       0x80000047 0x150a
+192.168.51.0    10.0.0.5        34         0x80000048 0x9e74
+192.168.61.0    10.0.0.6        1429       0x80000047 0x2cdc",
     "OSPFv3 Router with ID (10.0.0.1) (Process ID 1234 VRF default)
 
                 Router Link States (Area 0.0.0.0)
 
 Link ID         ADV Router      Age  Seq#       Link Count
-0.0.0.0         10.0.0.1        1753 0x80000044 3   
-0.0.0.0         10.0.0.2        1757 0x80000042 3   
-0.0.0.0         10.0.0.3        81   0x80000039 1   
-0.0.0.0         10.0.0.4        1459 0x8000003a 1   
-0.0.0.0         10.0.0.5        680  0x80000038 1   
-0.0.0.0         10.0.0.6        1391 0x80000038 1   
+0.0.0.0         10.0.0.1        1575 0x80000055 3   
+0.0.0.0         10.0.0.2        1571 0x80000056 3   
+0.0.0.0         10.0.0.3        1353 0x80000049 1   
+0.0.0.0         10.0.0.4        1009 0x80000049 1   
+0.0.0.0         10.0.0.5        806  0x80000049 1   
+0.0.0.0         10.0.0.6        741  0x80000049 1   
 
                 Inter-Area Prefix Link States (Area 0.0.0.0)
 
 Link ID         ADV Router      Age  Seq#       Prefix
-0.0.0.0         10.0.0.3        591  0x80000037 2001:db8:1921:6831::/64
-0.0.0.0         10.0.0.4        1722 0x80000036 2001:db8:1921:6841::/64
-0.0.0.0         10.0.0.5        1943 0x80000036 2001:db8:1921:6851::/64
-0.0.0.0         10.0.0.6        610  0x80000037 2001:db8:1921:6861::/64
+0.0.0.0         10.0.0.3        1353 0x80000047 2001:db8:1921:6831::/64
+0.0.0.0         10.0.0.4        1256 0x80000047 2001:db8:1921:6841::/64
+0.0.0.0         10.0.0.5        1057 0x80000047 2001:db8:1921:6851::/64
+0.0.0.0         10.0.0.6        1492 0x80000047 2001:db8:1921:6861::/64
 
                 Intra-Area Prefix Link States (Area 0.0.0.0)
 
 Link ID         ADV Router      Age  Seq#       Ref-lstype Ref-LSID
-1.0.0.0         10.0.0.1        1783 0x80000040 Router     0.0.0.0        
-1.0.0.0         10.0.0.2        1767 0x8000003f Router     0.0.0.0        
-0.0.0.0         10.0.0.3        591  0x80000039 Router     0.0.0.0        
-0.0.0.0         10.0.0.4        1722 0x80000038 Router     0.0.0.0        
-0.0.0.0         10.0.0.5        1943 0x80000038 Router     0.0.0.0        
-0.0.0.0         10.0.0.6        610  0x80000039 Router     0.0.0.0        
+1.0.0.0         10.0.0.1        1765 0x80000051 Router     0.0.0.0        
+1.0.0.0         10.0.0.2        1581 0x80000052 Router     0.0.0.0        
+0.0.0.0         10.0.0.3        1353 0x80000049 Router     0.0.0.0        
+0.0.0.0         10.0.0.4        1256 0x80000049 Router     0.0.0.0        
+0.0.0.0         10.0.0.5        1057 0x80000048 Router     0.0.0.0        
+0.0.0.0         10.0.0.6        1492 0x80000049 Router     0.0.0.0        
 
                 Link-Local Link States (Area 0.0.0.0)
 
 Link ID         ADV Router      Age  Seq#       Interface
-0.0.0.5         10.0.0.1        1053 0x8000003f Lo0
-0.0.0.9         10.0.0.1        273  0x80000042 Eth1/4
-0.0.0.3         10.0.0.4        1722 0x80000037 Eth1/4
-0.0.0.8         10.0.0.1        913  0x80000040 Eth1/3
-0.0.0.3         10.0.0.3        591  0x80000038 Eth1/3
-0.0.0.6         10.0.0.1        1753 0x8000003e Eth1/1
-0.0.0.6         10.0.0.2        1757 0x8000003e Eth1/1",
+0.0.0.5         10.0.0.1        74   0x80000052 Lo0
+0.0.0.9         10.0.0.1        1775 0x80000052 Eth1/4
+0.0.0.3         10.0.0.4        1256 0x80000048 Eth1/4
+0.0.0.8         10.0.0.1        1765 0x80000052 Eth1/3
+0.0.0.3         10.0.0.3        1353 0x80000048 Eth1/3
+0.0.0.6         10.0.0.1        1575 0x80000052 Eth1/1
+0.0.0.6         10.0.0.2        1581 0x80000052 Eth1/1",
     "NAME     LINE         TIME         IDLE          PID COMMENT
-admin    pts/3        Jul  6 17:44   .         10581 (10.100.100.8) session=ssh *",
+admin    pts/3        Jul  8 10:55   .         22921 (10.100.100.4) session=ssh *",
     "Cisco Nexus Operating System (NX-OS) Software
 TAC support: http://www.cisco.com/tac
 Documents: http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.html
@@ -282,7 +282,7 @@ Hardware
 
   Device name: NXOS-01
   bootflash:    4287040 kB
-Kernel uptime is 1 day(s), 6 hour(s), 11 minute(s), 45 second(s)
+Kernel uptime is 1 day(s), 15 hour(s), 31 minute(s), 43 second(s)
 
 Last reset 
   Reason: Unknown

@@ -17,18 +17,18 @@ Lo0                            up             up       \"Loopback 0\"",
 FastEthernet0/0            172.16.16.1     YES NVRAM  up                    up      
 FastEthernet0/1            unassigned      YES NVRAM  administratively down down    
 FastEthernet1/0            192.168.61.1    YES NVRAM  up                    up      
-FastEthernet2/0            192.168.250.102 YES DHCP   up                    up      
+FastEthernet2/0            192.168.250.100 YES DHCP   up                    up      
 Loopback0                  10.0.0.6        YES NVRAM  up                    up",
     "FastEthernet0/0            [up/up]
-    FE80::C006:14FF:FEE6:0
+    FE80::C006:3BFF:FEF5:0
     2001:DB8:172:1616::6
 FastEthernet0/1            [administratively down/down]
 FastEthernet1/0            [up/up]
-    FE80::C006:14FF:FEE6:10
+    FE80::C006:3BFF:FEF5:10
     2001:DB8:1921:6861::1
 FastEthernet2/0            [up/up]
 Loopback0                  [up/up]
-    FE80::C006:14FF:FEE6:0
+    FE80::C006:3BFF:FEF5:0
     2001:DB8:10::6",
     "Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
        D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
@@ -40,25 +40,25 @@ Loopback0                  [up/up]
 
 Gateway of last resort is 172.16.16.0 to network 0.0.0.0
 
-O IA 192.168.31.0/24 [110/77535] via 172.16.16.0, 1d05h, FastEthernet0/0
+O IA 192.168.31.0/24 [110/77535] via 172.16.16.0, 20:51:30, FastEthernet0/0
 C    192.168.61.0/24 is directly connected, FastEthernet1/0
      172.16.0.0/31 is subnetted, 5 subnets
 C       172.16.16.0 is directly connected, FastEthernet0/0
-O       172.16.12.0 [110/66535] via 172.16.16.0, 1d05h, FastEthernet0/0
-O       172.16.13.0 [110/67535] via 172.16.16.0, 1d05h, FastEthernet0/0
-O       172.16.14.0 [110/67535] via 172.16.16.0, 1d05h, FastEthernet0/0
-O       172.16.15.0 [110/66535] via 172.16.16.0, 1d05h, FastEthernet0/0
-O IA 192.168.41.0/24 [110/77535] via 172.16.16.0, 1d05h, FastEthernet0/0
+O       172.16.12.0 [110/66535] via 172.16.16.0, 1d15h, FastEthernet0/0
+O       172.16.13.0 [110/67535] via 172.16.16.0, 20:51:30, FastEthernet0/0
+O       172.16.14.0 [110/67535] via 172.16.16.0, 20:51:30, FastEthernet0/0
+O       172.16.15.0 [110/66535] via 172.16.16.0, 1d15h, FastEthernet0/0
+O IA 192.168.41.0/24 [110/77535] via 172.16.16.0, 20:51:30, FastEthernet0/0
 C    192.168.250.0/24 is directly connected, FastEthernet2/0
      10.0.0.0/8 is variably subnetted, 7 subnets, 2 masks
-O       10.0.0.2/32 [110/65536] via 172.16.16.0, 1d05h, FastEthernet0/0
-O       10.0.0.3/32 [110/67536] via 172.16.16.0, 1d05h, FastEthernet0/0
-O       10.0.0.1/32 [110/66536] via 172.16.16.0, 1d05h, FastEthernet0/0
+O       10.0.0.2/32 [110/65536] via 172.16.16.0, 1d15h, FastEthernet0/0
+O       10.0.0.3/32 [110/67536] via 172.16.16.0, 20:51:30, FastEthernet0/0
+O       10.0.0.1/32 [110/66536] via 172.16.16.0, 20:51:30, FastEthernet0/0
 C       10.0.0.6/32 is directly connected, Loopback0
-O       10.0.0.4/32 [110/67536] via 172.16.16.0, 1d05h, FastEthernet0/0
-O       10.0.0.5/32 [110/66536] via 172.16.16.0, 1d05h, FastEthernet0/0
+O       10.0.0.4/32 [110/67536] via 172.16.16.0, 20:51:30, FastEthernet0/0
+O       10.0.0.5/32 [110/66536] via 172.16.16.0, 1d15h, FastEthernet0/0
 S       10.100.0.0/16 [1/0] via 192.168.250.1
-O IA 192.168.51.0/24 [110/76535] via 172.16.16.0, 1d05h, FastEthernet0/0
+O IA 192.168.51.0/24 [110/76535] via 172.16.16.0, 1d15h, FastEthernet0/0
 S*   0.0.0.0/0 [1/0] via 172.16.16.0",
     "IPv6 Routing Table - 19 entries
 Codes: C - Connected, L - Local, S - Static, R - RIP, B - BGP
@@ -110,123 +110,123 @@ L   FF00::/8 [0/0]
 		Router Link States (Area 0)
 
 Link ID         ADV Router      Age         Seq#       Checksum Link count
-10.0.0.1        10.0.0.1        1763        0x80000045 0x0084A7 7
-10.0.0.2        10.0.0.2        1755        0x80000044 0x0056C7 7
-10.0.0.3        10.0.0.3        30          0x80000039 0x0059BB 3
-10.0.0.4        10.0.0.4        1285        0x8000003A 0x008B83 3
-10.0.0.5        10.0.0.5        938         0x80000038 0x00CD3D 3
-10.0.0.6        10.0.0.6        1104        0x80000038 0x000204 3
+10.0.0.1        10.0.0.1        461         0x80000058 0x005EBA 7
+10.0.0.2        10.0.0.2        452         0x80000059 0x002CDC 7
+10.0.0.3        10.0.0.3        1451        0x80000049 0x0039CB 3
+10.0.0.4        10.0.0.4        1487        0x80000049 0x006D92 3
+10.0.0.5        10.0.0.5        28          0x8000004A 0x00A94F 3
+10.0.0.6        10.0.0.6        1161        0x80000049 0x00DF15 3
 
 		Summary Net Link States (Area 0)
 
 Link ID         ADV Router      Age         Seq#       Checksum
-192.168.31.0    10.0.0.3        289         0x80000037 0x00A990
-192.168.41.0    10.0.0.4        306         0x80000037 0x0035F9
-192.168.51.0    10.0.0.5        165         0x80000037 0x00C063
-192.168.61.0    10.0.0.6        111         0x80000037 0x004CCC
+192.168.31.0    10.0.0.3        1694        0x80000047 0x0089A0
+192.168.41.0    10.0.0.4        1487        0x80000047 0x00150A
+192.168.51.0    10.0.0.5        28          0x80000048 0x009E74
+192.168.61.0    10.0.0.6        1421        0x80000047 0x002CDC
 
 		Router Link States (Area 6)
 
 Link ID         ADV Router      Age         Seq#       Checksum Link count
-10.0.0.6        10.0.0.6        111         0x80000037 0x00AE4F 1
+10.0.0.6        10.0.0.6        1421        0x80000047 0x008E5F 1
 
 		Summary Net Link States (Area 6)
 
 Link ID         ADV Router      Age         Seq#       Checksum
-10.0.0.1        10.0.0.6        1104        0x80000035 0x0052AE
-10.0.0.2        10.0.0.6        1104        0x80000035 0x0014D7
-10.0.0.3        10.0.0.6        1104        0x80000035 0x0071A1
-10.0.0.4        10.0.0.6        1104        0x80000035 0x0067AA
-10.0.0.5        10.0.0.6        1104        0x80000035 0x002AD2
-10.0.0.6        10.0.0.6        111         0x80000037 0x00E9FB
-172.16.12.0     10.0.0.6        1104        0x80000035 0x00C480
-172.16.13.0     10.0.0.6        1104        0x80000035 0x00EC6B
-172.16.14.0     10.0.0.6        1104        0x80000035 0x00E175
-172.16.15.0     10.0.0.6        1104        0x80000035 0x00A39E
-172.16.16.0     10.0.0.6        111         0x80000038 0x0060C9
-192.168.31.0    10.0.0.6        1104        0x80000035 0x000160
-192.168.41.0    10.0.0.6        1104        0x80000035 0x0092C4
-192.168.51.0    10.0.0.6        1104        0x80000035 0x00F048
+10.0.0.1        10.0.0.6        674         0x80000026 0x00709F
+10.0.0.2        10.0.0.6        1161        0x80000047 0x00EFE9
+10.0.0.3        10.0.0.6        674         0x80000026 0x008F92
+10.0.0.4        10.0.0.6        674         0x80000026 0x00859B
+10.0.0.5        10.0.0.6        1161        0x80000047 0x0006E4
+10.0.0.6        10.0.0.6        1421        0x80000047 0x00C90C
+172.16.12.0     10.0.0.6        1161        0x80000047 0x00A092
+172.16.13.0     10.0.0.6        674         0x80000026 0x000B5C
+172.16.14.0     10.0.0.6        674         0x80000026 0x00FF66
+172.16.15.0     10.0.0.6        1161        0x80000047 0x007FB0
+172.16.16.0     10.0.0.6        1421        0x80000048 0x0040D9
+192.168.31.0    10.0.0.6        674         0x80000026 0x001F51
+192.168.41.0    10.0.0.6        674         0x80000026 0x00B0B5
+192.168.51.0    10.0.0.6        1161        0x80000047 0x00CC5A
 
 		Summary ASB Link States (Area 6)
 
 Link ID         ADV Router      Age         Seq#       Checksum
-10.0.0.6        10.0.0.6        1104        0x80000035 0x00B750",
+10.0.0.6        10.0.0.6        1161        0x80000047 0x009362",
     "OSPFv3 Router with ID (10.0.0.6) (Process ID 1234)
 
 		Router Link States (Area 0)
 
 ADV Router      Age         Seq#        Fragment ID  Link count  Bits
-10.0.0.1        1754        0x80000044  0            3           None
-10.0.0.2        1755        0x80000042  0            3           None
-10.0.0.3        81          0x80000039  0            1           B
-10.0.0.4        1460        0x8000003A  0            1           B
-10.0.0.5        678         0x80000038  0            1           B
-10.0.0.6        1387        0x80000038  0            1           B
+10.0.0.1        1571        0x80000055  0            3           None
+10.0.0.2        1565        0x80000056  0            3           None
+10.0.0.3        1349        0x80000049  0            1           B
+10.0.0.4        1005        0x80000049  0            1           B
+10.0.0.5        800         0x80000049  0            1           B
+10.0.0.6        733         0x80000049  0            1           B
 
 		Inter Area Prefix Link States (Area 0)
 
 ADV Router      Age         Seq#      	Prefix
-10.0.0.3        592         0x80000037  2001:DB8:1921:6831::/64
-10.0.0.4        1722        0x80000036  2001:DB8:1921:6841::/64
-10.0.0.5        1941        0x80000036  2001:DB8:1921:6851::/64
-10.0.0.6        606         0x80000037  2001:DB8:1921:6861::/64
+10.0.0.3        1349        0x80000047  2001:DB8:1921:6831::/64
+10.0.0.4        1252        0x80000047  2001:DB8:1921:6841::/64
+10.0.0.5        1052        0x80000047  2001:DB8:1921:6851::/64
+10.0.0.6        1485        0x80000047  2001:DB8:1921:6861::/64
 
 		Link (Type-8) Link States (Area 0)
 
 ADV Router      Age         Seq#        Link ID    Interface
-10.0.0.2        1815        0x8000003E  11         Fa0/0
-10.0.0.6        606         0x80000038  4          Fa0/0
+10.0.0.2        1565        0x80000052  11         Fa0/0
+10.0.0.6        1485        0x80000048  4          Fa0/0
 
 		Intra Area Prefix Link States (Area 0)
 
 ADV Router      Age         Seq#        Link ID    Ref-lstype  Ref-LSID
-10.0.0.1        1784        0x80000040  16777216   0x2001      0
-10.0.0.2        1765        0x8000003F  16777216   0x2001      0
-10.0.0.3        592         0x80000039  0          0x2001      0
-10.0.0.4        1722        0x80000038  0          0x2001      0
-10.0.0.5        1941        0x80000038  0          0x2001      0
-10.0.0.6        606         0x80000039  0          0x2001      0
+10.0.0.1        1761        0x80000051  16777216   0x2001      0
+10.0.0.2        1575        0x80000052  16777216   0x2001      0
+10.0.0.3        1349        0x80000049  0          0x2001      0
+10.0.0.4        1252        0x80000049  0          0x2001      0
+10.0.0.5        1052        0x80000048  0          0x2001      0
+10.0.0.6        1485        0x80000049  0          0x2001      0
 
 		Router Link States (Area 6)
 
 ADV Router      Age         Seq#        Fragment ID  Link count  Bits
-10.0.0.6        606         0x80000038  0            0           B
+10.0.0.6        1485        0x80000048  0            0           B
 
 		Inter Area Prefix Link States (Area 6)
 
 ADV Router      Age         Seq#      	Prefix
-10.0.0.6        606         0x80000038  2001:DB8:172:1616::/64
-10.0.0.6        606         0x80000037  2001:DB8:10::6/128
-10.0.0.6        1387        0x80000035  2001:DB8:10::2/128
-10.0.0.6        1387        0x80000035  2001:DB8:172:1615::/64
-10.0.0.6        1387        0x80000035  2001:DB8:10::5/128
-10.0.0.6        1387        0x80000035  2001:DB8:1921:6851::/64
-10.0.0.6        1387        0x80000035  2001:DB8:172:1612::/64
-10.0.0.6        1387        0x80000035  2001:DB8:10::1/128
-10.0.0.6        1387        0x80000035  2001:DB8:172:1614::/64
-10.0.0.6        1387        0x80000035  2001:DB8:172:1613::/64
-10.0.0.6        1387        0x80000035  2001:DB8:10::3/128
-10.0.0.6        1387        0x80000035  2001:DB8:10::4/128
-10.0.0.6        1387        0x80000035  2001:DB8:1921:6841::/64
-10.0.0.6        1387        0x80000035  2001:DB8:1921:6831::/64
+10.0.0.6        1485        0x80000048  2001:DB8:172:1616::/64
+10.0.0.6        1485        0x80000047  2001:DB8:10::6/128
+10.0.0.6        733         0x80000047  2001:DB8:10::1/128
+10.0.0.6        733         0x80000047  2001:DB8:172:1614::/64
+10.0.0.6        733         0x80000047  2001:DB8:172:1613::/64
+10.0.0.6        733         0x80000047  2001:DB8:172:1612::/64
+10.0.0.6        733         0x80000047  2001:DB8:10::2/128
+10.0.0.6        733         0x80000047  2001:DB8:172:1615::/64
+10.0.0.6        733         0x80000047  2001:DB8:10::3/128
+10.0.0.6        733         0x80000047  2001:DB8:10::4/128
+10.0.0.6        733         0x80000047  2001:DB8:10::5/128
+10.0.0.6        733         0x80000047  2001:DB8:1921:6851::/64
+10.0.0.6        733         0x80000047  2001:DB8:1921:6841::/64
+10.0.0.6        733         0x80000047  2001:DB8:1921:6831::/64
 
 		Inter Area Router Link States (Area 6)
 
 ADV Router      Age         Seq#        Link ID    Dest RtrID
-10.0.0.6        1387        0x80000035  167772166  10.0.0.6
+10.0.0.6        733         0x80000047  167772166  10.0.0.6
 
 		Link (Type-8) Link States (Area 6)
 
 ADV Router      Age         Seq#        Link ID    Interface
-10.0.0.6        606         0x80000038  6          Fa1/0
+10.0.0.6        1485        0x80000048  6          Fa1/0
 
 		Intra Area Prefix Link States (Area 6)
 
 ADV Router      Age         Seq#        Link ID    Ref-lstype  Ref-LSID
-10.0.0.6        606         0x80000037  0          0x2001      0",
+10.0.0.6        1485        0x80000047  0          0x2001      0",
     "Line       User       Host(s)              Idle       Location
-* 98 vty 0     admin      idle                 00:00:00 10.100.100.8
+* 98 vty 0     admin      idle                 00:00:00 10.100.100.4
 
   Interface    User               Mode         Idle     Peer Address",
     "Cisco IOS Software, 3700 Software (C3725-ADVENTERPRISEK9-M), Version 12.4(15)T14, RELEASE SOFTWARE (fc2)
@@ -237,7 +237,7 @@ Compiled Tue 17-Aug-10 12:08 by prod_rel_team
 ROM: ROMMON Emulation Microcode
 ROM: 3700 Software (C3725-ADVENTERPRISEK9-M), Version 12.4(15)T14, RELEASE SOFTWARE (fc2)
 
-ACC-06 uptime is 1 day, 6 hours, 12 minutes
+ACC-06 uptime is 1 day, 15 hours, 31 minutes
 System returned to ROM by unknown reload cause - suspect boot_data[BOOT_COUNT] 0x0, BOOT_COUNT 0, BOOTDATA 19
 System image file is \"tftp://255.255.255.255/unknown\"
 

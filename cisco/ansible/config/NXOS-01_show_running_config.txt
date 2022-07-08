@@ -1,10 +1,10 @@
 ['!Command: show running-config
-!Running configuration last done at: Wed Jul  6 14:47:45 2022
-!Time: Wed Jul  6 14:49:11 2022
+!Running configuration last done at: Fri Jul  8 10:31:30 2022
+!Time: Fri Jul  8 10:55:00 2022
 
 version 9.3(6) Bios:version  
-hostname NXOS-02
-vdc NXOS-02 id 1
+hostname NXOS-01
+vdc NXOS-01 id 1
   limit-resource vlan minimum 16 maximum 4094
   limit-resource vrf minimum 2 maximum 4096
   limit-resource port-channel minimum 0 maximum 511
@@ -17,30 +17,30 @@ feature ospf
 feature ospfv3
 feature lldp
 
-username admin password 5 $5$FKFGKM$OEC3uEg.Gp5hxSZngC/knP9gY2WwgpLnhk5yNtEdrE/  role network-admin
+username admin password 5 $5$MLFMPC$PFqkjYT6fJQ4HB.93rxMGJYAjVDUlsPkatGfo3dYkQ3  role network-admin
 no ip domain-lookup
-ip name-server 198.51.100.1 use-vrf management
+ip name-server 192.168.250.1 use-vrf management
 copp profile strict
-snmp-server user admin network-admin auth md5 0x8e53aac96fbaf3157050079767e9ae5d priv 0x8e53aac96fbaf3157050079767e9ae5d localizedkey
+snmp-server user admin network-admin auth md5 0x133f2464b7cb4a3475fc734e817c21b3 priv 0x133f2464b7cb4a3475fc734e817c21b3 localizedkey
 rmon event 1 log trap public description FATAL(1) owner PMON@FATAL
 rmon event 2 log trap public description CRITICAL(2) owner PMON@CRITICAL
 rmon event 3 log trap public description ERROR(3) owner PMON@ERROR
 rmon event 4 log trap public description WARNING(4) owner PMON@WARNING
 rmon event 5 log trap public description INFORMATION(5) owner PMON@INFO
 
-ip route 10.100.0.0/16 198.51.100.1
+ip route 10.100.0.0/16 192.168.250.1
 vlan 1
 
 vrf context management
-  ip route 0.0.0.0/0 198.51.100.1
+  ip route 0.0.0.0/0 192.168.250.1
 system vrf-member-change retain-l3-config
 
 
 interface Ethernet1/1
-  description "Conexao com NXOS-01 | Eth 1/1"
+  description "Conexao com NXOS-02 | Eth 1/1"
   no switchport
-  ip address 172.16.12.1/31
-  ipv6 address 2001:db8:172:1612::2/64
+  ip address 172.16.12.0/31
+  ipv6 address 2001:db8:172:1612::1/64
   ip ospf network point-to-point
   no ip ospf passive-interface
   ip router ospf 1234 area 0.0.0.0
@@ -52,34 +52,34 @@ interface Ethernet1/1
 interface Ethernet1/2
 
 interface Ethernet1/3
+  description "Conexao com ACC-03 | Fa 0/0"
+  no switchport
+  ip address 172.16.13.0/31
+  ipv6 address 2001:db8:172:1613::1/64
+  ip ospf network point-to-point
+  no ip ospf passive-interface
+  ip router ospf 1234 area 0.0.0.0
+  ospfv3 network point-to-point
+  no ospfv3 passive-interface
+  ipv6 router ospfv3 1234 area 0.0.0.0
+  no shutdown
 
 interface Ethernet1/4
+  description "Conexao com ACC-04 | Fa 0/0"
+  no switchport
+  ip address 172.16.14.0/31
+  ipv6 address 2001:db8:172:1614::1/64
+  ip ospf network point-to-point
+  no ip ospf passive-interface
+  ip router ospf 1234 area 0.0.0.0
+  ospfv3 network point-to-point
+  no ospfv3 passive-interface
+  ipv6 router ospfv3 1234 area 0.0.0.0
+  no shutdown
 
 interface Ethernet1/5
-  description "Conexao com ACC-05 | Fa 0/0"
-  no switchport
-  ip address 172.16.15.0/31
-  ipv6 address 2001:db8:172:1615::1/64
-  ip ospf network point-to-point
-  no ip ospf passive-interface
-  ip router ospf 1234 area 0.0.0.0
-  ospfv3 network point-to-point
-  no ospfv3 passive-interface
-  ipv6 router ospfv3 1234 area 0.0.0.0
-  no shutdown
 
 interface Ethernet1/6
-  description "Conexao com ACC-06 | Fa 0/0"
-  no switchport
-  ip address 172.16.16.0/31
-  ipv6 address 2001:db8:172:1616::1/64
-  ip ospf network point-to-point
-  no ip ospf passive-interface
-  ip router ospf 1234 area 0.0.0.0
-  ospfv3 network point-to-point
-  no ospfv3 passive-interface
-  ipv6 router ospfv3 1234 area 0.0.0.0
-  no shutdown
 
 interface Ethernet1/7
 
@@ -204,8 +204,8 @@ interface mgmt0
 
 interface loopback0
   description "Loopback 0"
-  ip address 10.0.0.2/32
-  ipv6 address 2001:db8:10::2/128
+  ip address 10.0.0.1/32
+  ipv6 address 2001:db8:10::1/128
   ip router ospf 1234 area 0.0.0.0
   ipv6 router ospfv3 1234 area 0.0.0.0
 icam monitor scale
@@ -214,16 +214,16 @@ line console
 line vty
 boot nxos bootflash:/nxos.9.3.6.bin sup-1
 router ospf 1234
-  router-id 10.0.0.2
+  router-id 10.0.0.1
   log-adjacency-changes
-  area 0.0.0.0 range 10.0.0.2/32
+  area 0.0.0.0 range 10.0.0.1/32
   area 0.0.0.0 range 172.16.12.0/31
-  area 0.0.0.0 range 172.16.15.0/31
-  area 0.0.0.0 range 172.16.16.0/31
+  area 0.0.0.0 range 172.16.13.0/31
+  area 0.0.0.0 range 172.16.14.0/31
   auto-cost reference-bandwidth 1000 Gbps
   passive-interface default
 router ospfv3 1234
-  router-id 10.0.0.2
+  router-id 10.0.0.1
   log-adjacency-changes
   auto-cost reference-bandwidth 1000 Gbps
   passive-interface default']

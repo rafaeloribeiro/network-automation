@@ -1,0 +1,30 @@
+---
+#
+# Ideia adaptada de: https://networkop.co.uk/blog/2015/06/24/ansible-intro/
+#   --> Houve necessidade de se ajustar o módulo para 'cli_command'; 
+#   --> Módulo 'raw' não roda remotamente em dispositivos Cisco.
+#
+- name: Run traceroute commands
+  hosts: 
+    - cisco_ios
+    - nexus_nxos
+  gather_facts: false
+  vars:
+    loopbacks: {
+      "NXOS-01": "10.0.0.1",
+      "NXOS-02": "10.0.0.2",
+      "ACC-03": "10.0.0.3",
+      "ACC-04": "10.0.0.4",
+      "ACC-05": "10.0.0.5",
+      "ACC-06": "10.0.0.6",
+    }
+  tasks:
+    - name: run traceroute to every other host
+      cli_command:
+        command: "traceroute {{ item.value }}"
+      with_dict: "{{ loopbacks }}" 
+      when: item.key != inventory_hostname
+      register: trace_result
+    - name: print traceroute results
+      debug:
+        var: trace_result

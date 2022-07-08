@@ -3,7 +3,7 @@
   hosts:
     - nexus_nxos
     - cisco_ios
-  strategy: free
+  #strategy: free
   gather_facts: false
   tasks:
   - name: Get current configuration - classic ios devices
@@ -14,7 +14,7 @@
   - name: Writing device configuration to file - classic ios devices
     copy:
       content: "{{ response_ios.stdout | replace('\\n', '\n') }}"
-      dest: "{{ inventory_hostname }}_show_running_config.txt"
+      dest: "config/{{ inventory_hostname }}_show_running_config.txt"
     when: '"cisco_ios" in group_names'
   - name: Get current configuration - NX-OS devices
     cisco.nxos.nxos_command:
@@ -24,5 +24,5 @@
   - name: Writing device configuration to file - NX-OS devices
     copy:
       content: "{{ response_nxos.stdout | replace('\\n', '\n') }}"
-      dest: "{{ inventory_hostname }}_show_running_config.txt"
+      dest: "config/{{ inventory_hostname }}_show_running_config.txt"
     when: '"nexus_nxos" in group_names'

@@ -3,7 +3,7 @@
   hosts:
     - nexus_nxos
     - cisco_ios
-  strategy: free
+  #strategy: free
   gather_facts: false
 
   tasks:
@@ -27,7 +27,7 @@
   - name: Writing device status to file - classic ios devices
     copy:
       content: "{{ response_ios.stdout | to_nice_json | replace('\\n','\n') | replace('\\t','\t') }}"
-      dest: "{{ inventory_hostname }}_show_op_commands.txt"
+      dest: "status/{{ inventory_hostname }}_show_op_commands.txt"
     when: '"cisco_ios" in group_names'
 
   - name: Get current status - NX-OS devices
@@ -49,5 +49,5 @@
   - name: Writing device status to file - NX-OS devices
     copy:
       content: "{{ response_nxos.stdout | to_nice_json | replace('\\n','\n') | replace('\\t','\t') }}"
-      dest: "{{ inventory_hostname }}_show_op_commands.txt"
+      dest: "status/{{ inventory_hostname }}_show_op_commands.txt"
     when: '"nexus_nxos" in group_names'

@@ -21,23 +21,28 @@ data = time.strftime('%Y%m%d', time.localtime())
 def ListaRouters(arquivo):
 
     router_dict = {}
-    porta=str()
 
     #### Arquivo de Inventario ####
 
     with open(arquivo,"r") as input_file:
         # Formato arquivo:
         # ROTEADOR1;PORTA-SSH
-        # ROTEADOR2;PORTA-SSH
+        # ROTEADOR2;
         # (...)
         # ROTEADOR4;PORTA-SSH
         linereader = csv.reader(input_file, delimiter=';')
         for line in linereader:
-            if line[1]:
-                router_dict[line[0]]=line[1]
-            else:
-                # Default porta 22 se não houver
-                router_dict[line[0]]="22"
+            try:
+                router_name = line[0]
+                if line[1]:
+                    router_port = line[1]
+                    router_dict[router_name]=router_port
+                else:
+                    # Default porta 22 se não houver, mas exista o ";"
+                    router_dict[router_name]="22"
+            except:
+                # Default porta 22 se não houver nada após o nome do roteador
+                router_dict[router_name]="22"
 
     return router_dict
 
@@ -45,16 +50,16 @@ def AcessaRouter(dispositivo,porta,saida):
 
     #### AQUI ASSUME-SE QUE O USUARIO E SENHA SERAO OS MESMOS! ####
 
-    dev = Device(host="localhost", port=porta, user="USUARIO", password="SENHA")
+    dev = Device(host=dispositivo, port=porta, user="USUARIO", password="PASSWORD")
 
     try:
         dev.open(normalize=True)
 
         print(f' - Coletando inventario XML do roteador {dispositivo} na data de: ' + time.strftime('%d/%m/%Y', time.localtime()))
 
-        resultado_licenses = dev.rpc.get_chassis_inventory()
+        resultado_inventory = dev.rpc.get_chassis_inventory()
 
-        sch_output = etree.tostring(resultado_licenses, encoding='unicode',pretty_print=True)
+        sch_output = etree.tostring(resultado_inventory, encoding='unicode',pretty_print=True)
         saida.write(f'{dev.user}@' + str(dispositivo) + '> show chassis hardware detail | display xml | no-more \n' + str(sch_output))
  
         dev.close()
